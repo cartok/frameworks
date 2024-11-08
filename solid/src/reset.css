@@ -1,0 +1,109 @@
+@layer reset, components, utilities, overrides;
+
+@layer reset {
+  :root {
+    color-scheme: light dark;
+
+    font-family: "Terminess Nerd Font", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --color-white: #ffffff;
+    --color-black: #222222;
+
+    --focus-visible-outline-width: 2px;
+    --focus-visible-outline-color--light: var(--color-black);
+    --focus-visible-outline-color--dark: var(--color-white);
+  }
+
+  body {
+    min-height: 100vh;
+
+    font-size: 16px;
+  }
+
+  * {
+    /* At least input, button, textarea, select should inherit font. */
+    font: inherit;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    box-sizing: border-box;
+
+    background: inherit;
+
+    user-select: none;
+    text-decoration: none;
+  }
+
+  *:focus-visible {
+    outline-width: var(--focus-visible-outline-width);
+    outline-offset: 0px;
+    outline-style: solid;
+  }
+
+  @media (prefers-color-scheme: light) {
+    *:focus-visible {
+      outline-color: var(--focus-visible-outline-color--light);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    *:focus-visible {
+      outline-color: var(--focus-visible-outline-color--dark);
+    }
+  }
+
+  input:focus-visible {
+    outline: unset;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input {
+    width: 100%;
+    outline: 0;
+    background-color: transparent;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+    list-style-type: none;
+  }
+
+  img,
+  picture,
+  video,
+  svg {
+    display: inline-grid;
+    max-width: 100%;
+  }
+
+  a:active,
+  a:hover,
+  a:visited {
+    color: initial;
+  }
+
+  a:not([draggable]),
+  img:not([draggable]),
+  audio:not([draggable]),
+  video:not([draggable]),
+  input:not([draggable]),
+  textarea:not([draggable]),
+  link:not([draggable]),
+  button:not([draggable]) {
+    -webkit-user-drag: none;
+    touch-action: none;
+  }
+}

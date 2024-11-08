@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For, Index } from "solid-js";
+import { createEffect, createSignal, For } from "solid-js";
 import "./App.css";
 
 type ListItem = { text: string };
@@ -25,6 +25,7 @@ function App() {
   return (
     <>
       <h1>Vite + Solid</h1>
+      <a href="https://www.google.de">google.de</a>
       <form on:submit={addToList}>
         <input
           value={text()}
