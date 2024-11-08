@@ -1,18 +1,33 @@
-@layer reset, components, utilities, overrides;
+@layer reset, base, component, utility, override;
+
+/* base.css */
+@layer base {
+  :root {
+    color-scheme: light dark;
+    font-family: "Terminess Nerd Font", sans-serif;
+  }
+}
+
+/* colors.css */
+@layer base {
+  :root {
+    --space: 4px;
+  }
+}
 
 @layer reset {
   :root {
-    color-scheme: light dark;
-
-    font-family: "Terminess Nerd Font", sans-serif;
+    font-family: sans-serif;
     line-height: 1;
     font-weight: 400;
     overflow-wrap: break-word;
+    word-break: break-word;
     font-synthesis: none;
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    /* TODO: move to base/system */
     --color-white: #ffffff;
     --color-black: #222222;
 
@@ -28,6 +43,7 @@
   }
 
   * {
+    /* TODO: The font setup could need some improvement. Can't I solve things without * selector? */
     /* At least input, button, textarea, select should inherit font. */
     font: inherit;
 
@@ -43,6 +59,7 @@
     text-decoration: none;
   }
 
+  /* TODO: Decide about how to display the border or if at all / conditionally (screen reader)? */
   *:focus-visible {
     outline-width: var(--focus-visible-outline-width);
     outline-offset: 0px;

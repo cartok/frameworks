@@ -1,5 +1,6 @@
 import { createEffect, createSignal, For } from "solid-js";
 import "./App.css";
+import { Header } from "./components/Header";
 
 type ListItem = { text: string };
 
@@ -24,21 +25,24 @@ function App() {
 
   return (
     <>
-      <h1>Vite + Solid</h1>
-      <a href="https://www.google.de">google.de</a>
-      <form on:submit={addToList}>
-        <input
-          value={text()}
-          on:input={(e) => setText(e.target.value)}
-          style={{
-            "background-color": "red",
-          }}
-        />
-        <button type="submit">add</button>
-      </form>
-      <ol>
-        <For each={list()}>{(item) => <li>{item.text}</li>}</For>
-      </ol>
+      <Header>Vite + Solid</Header>
+      <div class="content">
+        {/* WIP CSS */}
+        {/* <a href="https://www.google.de">google.de</a> */}
+        <form on:submit={addToList}>
+          <input
+            value={text()}
+            on:input={(e) => setText(e.target.value)}
+            style={{
+              "background-color": "red",
+            }}
+          />
+          <button type="submit">add</button>
+        </form>
+        <ol>
+          <For each={list()}>{(item) => <li>{item.text}</li>}</For>
+        </ol>
+      </div>
     </>
   );
 }
