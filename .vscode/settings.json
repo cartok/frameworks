@@ -12,6 +12,9 @@
   // Extension: Sort Lines
   "sortLines.filterBlankLines": true,
 
+  // Allow @scope
+  "css.lint.unknownAtRules": "ignore",
+
   // Code formatting, wrapping, auto-fix and auto-import.
   "typescript.suggest.autoImports": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,

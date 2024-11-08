@@ -1,0 +1,14 @@
+@layer component {
+  @scope (.todo-list) {
+    :scope {
+      display: grid;
+      gap: calc(var(--space) * 3);
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: calc(var(--space) * 3);
+    }
+  }
+}
