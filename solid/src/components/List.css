@@ -1,0 +1,9 @@
+@layer component {
+  @scope (.list) {
+    :scope {
+      display: inline-grid;
+      gap: calc(var(--space) * 2);
+      background: blue;
+    }
+  }
+}

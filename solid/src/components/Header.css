@@ -1,10 +1,17 @@
 @layer component {
   @scope (.header) {
     :scope {
-      font-size: 3rem;
       text-align: center;
       padding: calc(var(--space) * 2) 0;
       background-color: grey;
+    }
+
+    .h1 {
+      font-size: 3rem;
+    }
+
+    .h3 {
+      font-size: 1rem;
     }
   }
 }

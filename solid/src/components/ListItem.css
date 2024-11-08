@@ -1,0 +1,22 @@
+@layer component {
+  @scope (.list-item) {
+    :scope {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      background-color: green;
+    }
+
+    .text {
+      padding: 0 calc(var(--space) * 2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .button {
+      background-color: grey;
+      padding: calc(var(--space) * 2);
+    }
+  }
+}

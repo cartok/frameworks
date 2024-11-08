@@ -22,9 +22,10 @@ The Framework selection was made checking trends via influencers like Theo and P
 - Test router by linking to the TODO List from the index page
 - Test lazy loading of images and components on another page
 - Use vite where ever possible
-- **Use latest CSS features over anything else (`@layer`, `@scope`, `@container`)!**
+- **Use latest CSS features over anything else (`@layer`, `@scope`, `@container`)**
 
   Maybe there is a minimalistic and fast pre-processor like SASS but without any feature, just nesting. I would like to have nested class generation but I do not want to have all the other features and oppinons in the way!
+  Maybe consider inline styles over style files for SFCs, so try if it's possible with standards.
 
 #### Frameworks
 
