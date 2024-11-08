@@ -19,13 +19,16 @@ The Framework selection was made checking trends via influencers like Theo and P
 ### Stage 1
 
 - Create a CSR TODO List
+  - Thereby create design system like set of components to explore the framework edges a bit.
 - Test router by linking to the TODO List from the index page
 - Test lazy loading of images and components on another page
-- Use vite where ever possible
-- **Use latest CSS features over anything else (`@layer`, `@scope`, `@container`)**
-
-  Maybe there is a minimalistic and fast pre-processor like SASS but without any feature, just nesting. I would like to have nested class generation but I do not want to have all the other features and oppinons in the way!
-  Maybe consider inline styles over style files for SFCs, so try if it's possible with standards.
+- [x] Create a reusable CSS reset that I can use everwhere
+- CSS: **Try to use latest CSS features (`@layer`, `@scope`, `@container`)**. And just try to find a good solution that I can use anywhere... When I would use inline styles, I could not reuse them but it would be most simplistic. When I would use CSS files, I could simply reuse them accross these frameworks....
+  - Maybe there is a minimalistic and fast pre-processor like SASS but without any feature, just nesting. I would like to have nested class generation but I do not want to have all the other features and oppinons in the way.
+  - Consider inline styles elements instead of CSS files.
+  - Consider normal inline styles instead of CSS files & classes in general.
+    - Try to override using layer and atomic classes just for exploration?
+    - TODO: Do I really want to prepare for UI lib requirements? Maybe I should just not and go the most simple way, which would be inline styles in components, why not? What about compoenents that apply CSS to child elements like a button group with buttons inside, where the button group creates borders? Would it work well if I go with inline styles?
 
 #### Frameworks
 
