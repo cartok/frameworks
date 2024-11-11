@@ -8,7 +8,7 @@
       color: black;
       height: calc(var(--space) * 10);
       /* TODO: Gucken wie ich das am besten überschreiben würde */
-      padding: calc(var(--space) * 2);
+      padding: 0 calc(var(--space) * 2);
     }
 
     :scope.hug {
