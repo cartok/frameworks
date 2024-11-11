@@ -13,10 +13,14 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+  }
+}
 
+/* Override by layer */
+@layer a {
+  @scope (.list-item) {
     .button {
       background-color: grey;
-      padding: calc(var(--space) * 2);
     }
   }
 }

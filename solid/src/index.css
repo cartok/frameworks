@@ -1,4 +1,12 @@
-@import "./styles/reset.css";
-@import "./styles/colors.css";
-@import "./styles/variables.css";
-@import "./styles/typography.css";
+@layer reset, base, component, a, b, c, d, atomic;
+
+@import "./styles/reset.css" layer(reset);
+@import "./styles/colors.css" layer(base);
+@import "./styles/variables.css" layer(base);
+@import "./styles/typography.css" layer(base);
+
+@layer atomic {
+  .px-5 {
+    padding: 0 20px;
+  }
+}

@@ -1,5 +1,6 @@
 import { children, type ParentProps } from "solid-js";
 import "./ListItem.css";
+import { Button } from "./Button";
 
 export function ListItem(props: ParentProps) {
   const memorizedChildren = children(() => props.children);
@@ -7,8 +8,10 @@ export function ListItem(props: ParentProps) {
   return (
     <li class="list-item">
       <span class="text">{memorizedChildren()}</span>
-      {/* TODO: use Button with hug style? */}
-      <button class="button">remove</button>
+      {/* Override by atomic class */}
+      <Button size="hug" class="px-5">
+        remove
+      </Button>
     </li>
   );
 }

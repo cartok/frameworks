@@ -12,6 +12,8 @@ export function Button<T extends keyof JSX.IntrinsicElements = "button">(
   props: ParentProps<
     DynamicHTMLElementProps<T> & {
       size?: "default" | "double" | "hug";
+      // Nothing I would want to see at all, just a test.
+      class?: string;
     }
   >
 ) {
@@ -21,7 +23,11 @@ export function Button<T extends keyof JSX.IntrinsicElements = "button">(
 
   return (
     <Dynamic
-      classList={{ button: true, [props.size as string]: true }}
+      classList={{
+        [props.class!]: props.class,
+        button: true,
+        [props.size as string]: true,
+      }}
       component={props.element as string}
       {...props.attributes}
     >
