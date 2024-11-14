@@ -1,8 +1,7 @@
 import { createSignal, createEffect, For, createUniqueId } from "solid-js";
 import "./TodoList.css";
 import { Button } from "./Button";
-import { List } from "./List";
-import { ListItem } from "./ListItem";
+import { TodoListItem } from "./TodoListItem";
 
 type ListItem = { text: string };
 
@@ -50,8 +49,16 @@ export function TodoList() {
   });
 
   return (
-    <div class="todo-list">
-      <form class="form" onSubmit={addToList}>
+    // TODO: Mal gucken wie mit scoped element selectors aussehen würde.
+    // Man könnte sich halt abstraktion sparen und nur nutzen wenn es nötig ist bzw.
+    // wenn ein tag mehr als einmal vorkommt und dabei mindestens zwei verschiedene
+    // UI elemente rendert.
+    <div class="todo-list todo-list--foo --flag --flick">
+      <form
+        class="form todo-list-d todo-list--foo x todo-list-z "
+        onSubmit={addToList}
+      >
+        {/* TODO: Also try out input binding in the frameworks */}
         {/* <TextInput> */}
         <input
           value={text()}
@@ -63,11 +70,11 @@ export function TodoList() {
         {/* WIP: checking some limits & patterns */}
         <Button attributes={{ type: "submit" }}>add</Button>
       </form>
-      <List>
+      <ol class="list">
         <For each={Array.from(list().entries())}>
-          {([id, item]) => <ListItem id={id}>{item.text}</ListItem>}
+          {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
         </For>
-      </List>
+      </ol>
     </div>
   );
 }
