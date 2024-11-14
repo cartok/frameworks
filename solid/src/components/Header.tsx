@@ -6,8 +6,8 @@ export function Header(props: ParentProps) {
 
   return (
     <header class="header">
-      <h1 class="h1">TODO List</h1>
-      <div class="h2">(in {memorizedChildren()})</div>
+      <h1 class="title">TODO List</h1>
+      <div class="framework">(in {memorizedChildren()})</div>
     </header>
   );
 }
