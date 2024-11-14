@@ -1,51 +1,25 @@
-import { createSignal, createEffect, For, createUniqueId } from "solid-js";
-import "./TodoList.css";
+import { createEffect, createSignal, For } from "solid-js";
 import { Button } from "./Button";
+import "./TodoList.css";
+import { todoListStore } from "./TodoList.store";
 import { TodoListItem } from "./TodoListItem";
 
-type ListItem = { text: string };
+export function TodoList() {
+  const [text, setText] = createSignal<string>("");
 
-const [text, setText] = createSignal<string>("");
-const [list, setList] = createSignal<Map<string, ListItem>>(
-  new Map([
-    // Mock
-    [createUniqueId(), { text: "foo" }],
-    [createUniqueId(), { text: "bar" }],
-    [
-      createUniqueId(),
-      {
-        text: "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque.",
-      },
-    ],
-  ])
-);
+  function addToList(event: Event) {
+    event.preventDefault();
 
-function addToList(event: Event) {
-  event.preventDefault();
+    if (!text()) {
+      return;
+    }
 
-  if (!text()) {
-    return;
+    todoListStore.actions.addToList(text());
   }
 
-  setList(
-    new Map([
-      ...Array.from(list().entries()),
-      [createUniqueId(), { text: text() }],
-    ])
-  );
-
-  setText("");
-}
-
-export function removeFromList(id: string) {
-  list().delete(id);
-  setList(new Map(list().entries()));
-}
-
-export function TodoList() {
   createEffect(() => {
     console.log("text:", text());
-    console.log("list:", list());
+    console.log("list:", todoListStore.data);
   });
 
   return (
@@ -53,11 +27,8 @@ export function TodoList() {
     // Man könnte sich halt abstraktion sparen und nur nutzen wenn es nötig ist bzw.
     // wenn ein tag mehr als einmal vorkommt und dabei mindestens zwei verschiedene
     // UI elemente rendert.
-    <div class="todo-list todo-list--foo --flag --flick">
-      <form
-        class="form todo-list-d todo-list--foo x todo-list-z "
-        onSubmit={addToList}
-      >
+    <div class="todo-list">
+      <form class="form" onSubmit={addToList}>
         {/* TODO: Also try out input binding in the frameworks */}
         {/* <TextInput> */}
         <input
@@ -71,7 +42,7 @@ export function TodoList() {
         <Button attributes={{ type: "submit" }}>add</Button>
       </form>
       <ol class="list">
-        <For each={Array.from(list().entries())}>
+        <For each={Array.from(todoListStore.data.items)}>
           {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
         </For>
       </ol>

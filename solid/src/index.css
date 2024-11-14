@@ -5,6 +5,7 @@
 @import "./styles/variables.css" layer(base);
 @import "./styles/typography.css" layer(base);
 
+/* TODO: remove. it's just an example */
 @layer atomic {
   .px-5 {
     padding: 0 20px;

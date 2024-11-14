@@ -1,22 +1,39 @@
 import { createUniqueId } from "solid-js";
 import { createStore } from "solid-js/store";
-import { mock } from "./TodoList.mock";
-
-// Vorteil Store: Kann auch von Komponenten und anderem außerhalb des DOM scopes verwendet werden.
-// Für so eine Liste macht das Sinn.
 
 type TodoListItem = { text: string };
 type TodoListItems = Map<string, TodoListItem>;
+type TodoListStore = { items: TodoListItems };
 
-const [store, setStore] = createStore<TodoListItems>(mock);
+const [store, setStore] = createStore<TodoListStore>({
+  items: new Map(),
+});
 
-export function addToList(text: string) {
-  setStore(
-    new Map([...Array.from(store.entries()), [createUniqueId(), { text }]])
-  );
+addToList("foo");
+addToList("bar");
+addToList(
+  "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
+);
+
+function addToList(text: string) {
+  const sortedList: [string, TodoListItem][] = [
+    ...Array.from(store.items.entries()),
+    [createUniqueId(), { text }],
+  ];
+
+  sortedList.reverse();
+  setStore("items", new Map(sortedList));
 }
 
-export function removeFromList(id: string) {
-  store.delete(id);
-  setStore(new Map(store.entries()));
+function removeFromList(id: string) {
+  store.items.delete(id);
+  setStore("items", new Map(store.items.entries()));
 }
+
+export const todoListStore = {
+  data: store,
+  actions: {
+    addToList,
+    removeFromList,
+  },
+};
