@@ -1,4 +1,4 @@
-import { createUniqueId } from "solid-js";
+import { createMemo, createUniqueId } from "solid-js";
 import { createStore } from "solid-js/store";
 
 type TodoListItem = { text: string };
@@ -30,8 +30,10 @@ function removeFromList(id: string) {
   setStore("items", new Map(store.items.entries()));
 }
 
+const items = createMemo(() => Array.from(store.items));
+
 export const todoListStore = {
-  data: store,
+  items,
   actions: {
     addToList,
     removeFromList,

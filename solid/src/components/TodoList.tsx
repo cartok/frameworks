@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { Button } from "./Button";
 import "./TodoList.css";
 import { todoListStore } from "./TodoList.store";
@@ -16,11 +16,6 @@ export function TodoList() {
 
     todoListStore.actions.addToList(text());
   }
-
-  createEffect(() => {
-    console.log("text:", text());
-    console.log("list:", todoListStore.data);
-  });
 
   return (
     // TODO: Mal gucken wie mit scoped element selectors aussehen würde.
@@ -42,7 +37,7 @@ export function TodoList() {
         <Button attributes={{ type: "submit" }}>add</Button>
       </form>
       <ol class="list">
-        <For each={Array.from(todoListStore.data.items)}>
+        <For each={todoListStore.items()}>
           {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
         </For>
       </ol>

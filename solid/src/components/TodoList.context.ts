@@ -18,3 +18,5 @@ export function TodoListContextProvider(props: ParentProps) {
     </TodoListContext.Provider>
   );
 }
+
+// TODO: dokumentieren dass das context feature bugged war und file löschen
