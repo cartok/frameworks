@@ -9,6 +9,34 @@ corepack enable
 corepack pnpm i
 ```
 
+## WIP
+
+[Link to TODO.md](./TODO.md)
+
+## Documentation
+
+### Workspace
+
+#### Why `turborepo`?
+
+- (WIP) For linting & testing via git hooks
+  - should be usable with any hook system.
+  - should have no need to configure which workspaces to run the tasks in as turborepo is made for that, which should result in fast hooks: https://chatgpt.com/c/673738e3-6fec-8002-853d-3be0a49eacfb (link is not published)
+- (not used yet) To start related packages together like a backend combined with some frontend
+- (not used yet) To automatically build packages that changed, when required by another workspace
+
+#### Why `pnpm`?
+
+#### Why this node setup?
+
+- .node-version
+- .npmrc
+- package.json
+
+#### Why this tsconfig setup?
+
+#### Why this code formatting & linting setup?
+
 ## Framework selection
 
 The Framework selection was made checking trends via influencers like Theo and Primeagen + personal preferences + benchmark results.

@@ -10,13 +10,10 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
 
   - turbo
     - https://turbo.build/repo/docs/getting-started/add-to-existing-repository
-    - die apps brauchen keine concurrent builds...
-      ich brauche eigentlich momentan noch kein concurrent linting etc, habe keine packages.
-      wenn ich das css in ein package packe, was dann? nichts.
-      wozu brauche ich turbo dann?
-      - ggf. für linting & testing via git push hook
-      - ggf. später zum starten von setups aus mehreren apps, z.b. mit backend und frontend workspaces.
-      - ggf. später um packages für "apps" oder "backends" zu bauen.
+    - wozu:
+      - für linting & testing via git push hook
+      - zum starten von setups aus mehreren apps, z.b. mit backend und frontend workspaces.
+      - um packages für "apps" oder "backends" zu bauen.
     - sicher stellen dass die lokale `turbo` version verwendet wird. `bun run turbo` oder `npx turbo`?
       - nur dokumentieren oder enforcen über scripts (eine abstraktion die ich vlt. aber nicht haben will).
 
@@ -26,8 +23,6 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
     - sollte ich eine root config mit regeln anlegen und die dann innerhalb der workspaces verwenden (extend/import) und dann auf dessen files scopen, oder ist das unnötig?
   - prettier config
   - prettier eslint plugin
-
-- npm version updaten (meine ist nicht grad aktuell)
 
 - git hooks
   - wenn möglich scopen so dass nichts unnötig ausgeführt wird. nur die workspaces die geändert wurden sollten laufen, das könnte durch durch turborepo caching abgefangen werden?
