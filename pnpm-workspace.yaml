@@ -1,0 +1,4 @@
+packages:
+  - "workspaces/apps/vite/*"
+  - "workspaces/backends/*"
+  - "workspaces/packages/*"

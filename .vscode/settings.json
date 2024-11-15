@@ -18,6 +18,7 @@
   // Code formatting, wrapping, auto-fix and auto-import.
   "typescript.suggest.autoImports": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescriptreact]": {

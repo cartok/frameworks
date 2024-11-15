@@ -2,6 +2,13 @@
 
 Just started this to try out some web frameworks.
 
+## Installation
+
+```
+corepack enable
+corepack pnpm i
+```
+
 ## Framework selection
 
 The Framework selection was made checking trends via influencers like Theo and Primeagen + personal preferences + benchmark results.
@@ -19,6 +26,7 @@ The Framework selection was made checking trends via influencers like Theo and P
 - try out vanilla-css-extract
 - try out unocss
 - try out latest tailwind
+- SSR for all projects
 
 ### Stage 1
 

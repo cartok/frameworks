@@ -1,0 +1,7 @@
+@layer page {
+  @scope (.todo-list) {
+    :scope {
+      width: 400px;
+    }
+  }
+}
