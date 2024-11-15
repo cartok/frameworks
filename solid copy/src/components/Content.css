@@ -1,0 +1,9 @@
+@layer component {
+  @scope (.content) {
+    :scope {
+      display: grid;
+      justify-items: center;
+      padding: calc(var(--space) * 10);
+    }
+  }
+}
