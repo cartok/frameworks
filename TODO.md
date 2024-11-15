@@ -14,9 +14,9 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
       ich brauche eigentlich momentan noch kein concurrent linting etc, habe keine packages.
       wenn ich das css in ein package packe, was dann? nichts.
       wozu brauche ich turbo dann?
-      - ggf. für install aller dependencies
-      - ggf. später für linting & testing via git push hook
+      - ggf. für linting & testing via git push hook
       - ggf. später zum starten von setups aus mehreren apps, z.b. mit backend und frontend workspaces.
+      - ggf. später um packages für "apps" oder "backends" zu bauen.
     - sicher stellen dass die lokale `turbo` version verwendet wird. `bun run turbo` oder `npx turbo`?
       - nur dokumentieren oder enforcen über scripts (eine abstraktion die ich vlt. aber nicht haben will).
 
