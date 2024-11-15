@@ -29,6 +29,13 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
 
 - npm version updaten (meine ist nicht grad aktuell)
 
+- git hooks
+  - wenn möglich scopen so dass nichts unnötig ausgeführt wird. nur die workspaces die geändert wurden sollten laufen, das könnte durch durch turborepo caching abgefangen werden?
+    - ansonsten gucken ob ein hook tool das her gibt, vermutlich pre-commit, aber vielleicht auch husky? ggf. erstmal was minimalistischeres verwenden, wenn turborepo das caching gut macht.
+  - hooks
+    - pre-commit: lint, format
+    - pre-push: pre-commit + tests
+
 2. continue (solid csr)
 
 - finish solid cleanup & css refactoring (element selector rule)
