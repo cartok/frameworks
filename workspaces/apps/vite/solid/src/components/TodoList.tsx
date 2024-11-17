@@ -21,18 +21,13 @@ export function TodoList() {
     // TODO: Mal gucken wie mit scoped element selectors aussehen würde.
     // Man könnte sich halt abstraktion sparen und nur nutzen wenn es nötig ist bzw.
     // wenn ein tag mehr als einmal vorkommt und dabei mindestens zwei verschiedene
-    // UI elemente rendert.
+    // UI elemente rendert. man kann den scope ja from-to setzen (donut scope).
+    // Könnte gut sein, wenn auch iwo komplexer in manchen situationen
     <div class="todo-list">
       <form class="form" onSubmit={addToList}>
-        {/* TODO: Also try out input binding in the frameworks */}
+        {/* TODO: Try out controlled & uncontrolled input binding in the frameworks */}
         {/* <TextInput> */}
-        <input
-          value={text()}
-          onInput={(e) => setText(e.target.value)}
-          style={{
-            "background-color": "red",
-          }}
-        />
+        <input value={text()} onInput={(e) => setText(e.target.value)} />
         {/* WIP: checking some limits & patterns */}
         <Button attributes={{ type: "submit" }}>add</Button>
       </form>
