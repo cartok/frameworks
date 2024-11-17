@@ -1,27 +1,43 @@
+import eslint from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import pluginSolid from "eslint-plugin-solid";
 import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import typescriptEslint from "typescript-eslint";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default typescriptEslint.config(
+  /* Basics */
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  eslint.configs.recommended,
+  ...typescriptEslint.configs.strict,
+  ...typescriptEslint.configs.stylistic,
+
+  /* Apps */
+  {
+    files: ["workspaces/apps/vite/solid/**/*"],
+    ...pluginSolid.configs["flat/recommended"],
+    ...pluginSolid.configs["flat/typescript"],
+  },
+
+  /* Custom */
   {
     rules: {
-      // "@typescript-eslint/consistent-type-imports": [
-      //   "error",
-      //   {
-      //     prefer: "type-imports",
-      //     disallowTypeAnnotations: false,
-      //   },
-      // ],
+      /* Normal rules */
       eqeqeq: "error",
-      semi: "error",
+      "no-console": "warn",
+
+      /* Typescript rules */
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          prefer: "type-imports",
+          disallowTypeAnnotations: false,
+        },
+      ],
+      "@typescript-eslint/no-unused-vars": "warn",
     },
   },
-];
 
-// export const baseConfigs = [
-// export default baseConfigs;
+  /* Prettier (needs to be last) */
+  eslintConfigPrettier
+);

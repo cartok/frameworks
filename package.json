@@ -6,12 +6,14 @@
     "pnpm": "9.13.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.15.0",
-    "eslint": "^9.15.0",
+    "@eslint/js": "~9.14.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "~9.14.0",
+    "eslint-config-prettier": "^9.1.0",
     "globals": "^15.12.0",
     "pnpm": "9.13.2",
     "turbo": "~2.3.0",
-    "typescript": "~5.6.2",
-    "typescript-eslint": "^8.13.0"
+    "typescript": "~5.6.3",
+    "typescript-eslint": "^8.14.0"
   }
 }
