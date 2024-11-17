@@ -33,7 +33,7 @@ corepack pnpm i
 - .npmrc
 - package.json
 
-#### Why this tsconfig setup?
+#### Why this tsconfig setup and how does it work?
 
 #### Why this code formatting & linting setup?
 

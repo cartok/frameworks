@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [solid({ ssr: false })],
   resolve: {
     alias: {
-      "~/": "/src",
+      "~": "/src",
     },
   },
 });

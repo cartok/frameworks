@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    // Aliases
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+
+    // Linting
     "strict": true,
 
     /*

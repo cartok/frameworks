@@ -1,15 +1,6 @@
 {
-  "extends": [
-    // "../../../../tsconfig.aliases.json",
-    "../../../../tsconfig.linting.json",
-  ],
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    // Funktioniert nicht mehr, weil monorepo?!
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
-
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
