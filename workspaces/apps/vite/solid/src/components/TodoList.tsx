@@ -4,10 +4,14 @@ import { createSignal, For } from "solid-js";
 // import type { Button } from "~/components/Button";
 // import type { todoListStore } from "~/components/TodoList.store";
 // import type { TodoListItem } from "~/components/TodoListItem";
-import { Button } from "~/components/Button";
 import { todoListStore } from "~/components/TodoList.store";
 import { TodoListItem } from "~/components/TodoListItem";
 import "./TodoList.css";
+import { Button } from "~/components/Button";
+
+const x = "a";
+const d = "a" == x;
+console.log(d);
 
 export function TodoList() {
   const [text, setText] = createSignal<string>("");

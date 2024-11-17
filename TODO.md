@@ -4,10 +4,6 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
 
 - monorepo setup abschließen
 
-  - fix aliased imports
-
-  - reicht es aus "engines" in der root package.json zu definieren?
-
   - turbo
     - https://turbo.build/repo/docs/getting-started/add-to-existing-repository
     - wozu:
@@ -23,6 +19,8 @@ Entegegen der `README.md`, wo auch grob Planung drin steht, ist das der Ort für
     - sollte ich eine root config mit regeln anlegen und die dann innerhalb der workspaces verwenden (extend/import) und dann auf dessen files scopen, oder ist das unnötig?
   - prettier config
   - prettier eslint plugin
+  - Später: vite-plugin-eslint testen. ggf. die vite config dafür im vite ordner als base config
+    anlegen usw.
 
 - git hooks
   - wenn möglich scopen so dass nichts unnötig ausgeführt wird. nur die workspaces die geändert wurden sollten laufen, das könnte durch durch turborepo caching abgefangen werden?

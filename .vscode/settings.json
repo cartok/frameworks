@@ -16,6 +16,7 @@
   "css.lint.unknownAtRules": "ignore",
 
   // Code formatting, wrapping, auto-fix and auto-import.
+  "eslint.useFlatConfig": true,
   "typescript.suggest.autoImports": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
