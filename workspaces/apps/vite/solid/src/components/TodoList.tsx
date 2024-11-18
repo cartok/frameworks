@@ -23,7 +23,10 @@ export const TodoList: Component = () => {
       <form class="form" onSubmit={addToList}>
         <TextInput initialValue={text()} />
         <input value={text()} onInput={(e) => setText(e.target.value)} />
-        <Button element={{ tag: "button", attributes: { type: "submit" } }}>
+        <Button
+          size="double"
+          element={{ tag: "button", attributes: { type: "submit" } }}
+        >
           add
         </Button>
       </form>
