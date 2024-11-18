@@ -1,2 +1,2 @@
-Maybe share all CSS through a package here.
-Could simply import it from outside, otherwise.
+- Will share all CSS through packages.
+- Might gonna create several style packages, at least one for native CSS and one for vanilla-extract-css. Maybe additionally a setup of a atomic class framework.
