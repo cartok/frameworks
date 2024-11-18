@@ -3,11 +3,13 @@
 # Logs
 
 logs
+*.log
 _.log
 npm-debug.log_
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+pnpm-debug.log*
 .pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -97,25 +99,19 @@ web_modules/
 # dotenv environment variable files
 
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env.*.local
 
 # parcel-bundler cache (https://parceljs.org/)
 
 .cache
 .parcel-cache
 
-# Next.js build output
-
+# Build output
 .next
 out
-
-# Nuxt.js build / generate output
-
 .nuxt
 dist
+dist-ssr
 
 # Gatsby files
 
@@ -170,6 +166,12 @@ dist
 
 # IntelliJ based IDEs
 .idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Finder (MacOS) folder config
 .DS_Store
