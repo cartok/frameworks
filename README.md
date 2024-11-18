@@ -9,47 +9,13 @@ corepack enable
 corepack pnpm i
 ```
 
-## WIP
+## What's currently in development?
 
 [Link to TODO.md](./TODO.md)
 
 ## Documentation
 
-### Workspace
-
-#### Why `turborepo`?
-
-- (WIP) For linting & testing via git hooks
-  - should be usable with any hook system.
-  - should have no need to configure which workspaces to run the tasks in as turborepo is made for that, which should result in fast hooks: https://chatgpt.com/c/673738e3-6fec-8002-853d-3be0a49eacfb (link is not published)
-- (not used yet) To start related packages together like a backend combined with some frontend
-- (not used yet) To automatically build packages that changed, when required by another workspace
-
-#### Why `pnpm`?
-
-#### Why this engine setup?
-
-- .node-version
-- .npmrc
-- package.json
-
-#### Why this `tsconfig` setup and how does it work?
-
-#### Why this formatting & linting setup?
-
-##### Basic Rules
-
-##### Custom Rules
-
-##### How it composes
-
-#### Why write components as functions and not as `const` variables?
-
-#### Why organize code "top-down"?
-
-##### Component "props" exception
-
-#### Why should `props` not be destructured?
+[Link to DOCUMENTATION.md](./DOCUMENTATION.md)
 
 ## Framework selection
 
@@ -60,7 +26,7 @@ The Framework selection was made checking trends via influencers like Theo and P
 
   The backend frameworks comparison has a filter set to only include languages I would like to use at this point in time, I don't want to learn `rust` right now, I know and like `dart`, `go` is easy to learn, `kotlin` is superior to `java` and has the best performing libraries (`rust` also) and `typescript` is what I know well already. Unfortunately, without searching further, there seem to be no good `dart` frameworks. The best `kotlin`, `java`, and `rust` frameworks leave everything behind. I can't believe how people can still use spring when looking at the benchmarks. For `typescript` there is only one good choice: `elysia`. The best `go` frameworks seem to be slower than `elysia` but might still be a good choice (especially if SSG is a requirement, but this is just an assumption). On the `java` / `kotlin` side `vertx-web` delivers most extreme performance. I still need to choose one `go` and `kotlin` framework out of `chi/herz/echo/gin` and `vertex-web/http4k` later.
 
-## Plan
+## Gross plan
 
 ### Somewhen
 
@@ -74,7 +40,7 @@ The Framework selection was made checking trends via influencers like Theo and P
 - Create a TODO List (CSR)
 - Test router by linking to the TODO List from the index page
 - Test lazy loading of images and components on another page
-- [x] Create a reusable CSS reset that I can use everwhere
+- Create a reusable CSS reset that I can use everwhere
   - move it to a separate package
 - CSS: **Try to use latest CSS features (`@layer`, `@scope`, `@container`)**. And just try to find a good solution that I can use anywhere... When I would use inline styles, I could not reuse them but it would be most simplistic. When I would use CSS files, I could simply reuse them accross these frameworks...
   UPDATE: CSS nesting is already a thing in major browsers: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting - Class name concatenation like in preprocessors does not work though,
