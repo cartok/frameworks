@@ -27,15 +27,29 @@ corepack pnpm i
 
 #### Why `pnpm`?
 
-#### Why this node setup?
+#### Why this engine setup?
 
 - .node-version
 - .npmrc
 - package.json
 
-#### Why this tsconfig setup and how does it work?
+#### Why this `tsconfig` setup and how does it work?
 
-#### Why this code formatting & linting setup?
+#### Why this formatting & linting setup?
+
+##### Basic Rules
+
+##### Custom Rules
+
+##### How it composes
+
+#### Why write components as functions and not as `const` variables?
+
+#### Why organize code "top-down"?
+
+##### Component "props" exception
+
+#### Why should `props` not be destructured?
 
 ## Framework selection
 

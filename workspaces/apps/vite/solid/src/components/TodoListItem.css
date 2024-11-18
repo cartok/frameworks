@@ -24,12 +24,3 @@
     }
   }
 }
-
-/* Override by layer */
-@layer a {
-  @scope (.todo-list-item) {
-    .button {
-      background-color: grey;
-    }
-  }
-}

@@ -1,44 +1,53 @@
-import {
-  type JSX,
-  type ParentProps,
-  children as getMemorizedChildren,
-} from "solid-js";
-import { Dynamic } from "solid-js/web";
-import type { DynamicHTMLElementProps } from "~/types";
+import { type JSX, createMemo, mergeProps } from "solid-js";
+import type { ParentElementProps, ValidElementAttributes } from "~/types";
 import "./Button.css";
 
-export function Button<T extends keyof JSX.IntrinsicElements = "button">(
-  props: ParentProps &
-    // TODO: Too much / not enough?
-    // -> Vielleicht sollte man explizit nur eine auswahl erlauben: `button, a, div, span`
-    //    Für all diese dann explizit festlegen, welche props davon verwendbar sind.
-    //    Denke hierfür ist eine Abstraktion gut angebracht.
-    //    Die komponente soll den button style bringen aber auch links usw. erlauben, ohne dass
-    //    man wrappen muss, bei `link` in `button` könnte auch sonarlint meckern.
-    DynamicHTMLElementProps<T> & {
-      size?: "default" | "double" | "hug";
-    }
+type ValidElements = keyof Pick<
+  JSX.IntrinsicElements,
+  "button" | "a" | "div" | "span"
+>;
+
+type ButtonProps = {
+  size?: "default" | "double" | "hug";
+};
+
+export function Button<T extends ValidElements>(
+  props: ParentElementProps<T, ButtonProps>
 ) {
-  props = { element: "button" as T, size: "default", ...props };
+  const defaultProps: Partial<ButtonProps> = {
+    size: "default",
+  };
 
-  let attributes = {};
+  const defaultElementProps: {
+    [K in ValidElements]?: ValidElementAttributes<K>;
+  } = {
+    button: {
+      type: "button",
+    },
+  };
 
-  if (props.element === "button") {
-    attributes = { type: "button", ...props.attributes };
-  }
+  const Element = createMemo<string>(() => props.element.tag);
+  const mergedProps = mergeProps(defaultProps, defaultElementProps, props);
 
-  const memorizedChildren = getMemorizedChildren(() => props.children);
+  // TODO: finish basic component
+  // TODO: aria
 
   return (
-    <Dynamic
+    <Element
       classList={{
         button: true,
-        [props.size as string]: true,
+        [mergedProps.size as string]: true,
       }}
-      component={props.element as string}
-      {...attributes}
+      component={props.element.tag}
+      {...mergedProps.element.attributes}
     >
-      {memorizedChildren()}
-    </Dynamic>
+      {mergedProps.children}
+    </Element>
+  );
+}
+
+function TEST() {
+  return (
+    <Button element={{ tag: "button", attributes: { type: "" } }}>sdf</Button>
   );
 }

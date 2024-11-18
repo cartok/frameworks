@@ -1,10 +1,11 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, For, type Component } from "solid-js";
 import { Button } from "~/components/Button";
 import { todoListStore } from "~/components/TodoList.store";
 import { TodoListItem } from "~/components/TodoListItem";
 import "./TodoList.css";
+import { TextInput } from "~/components/TextInput";
 
-export function TodoList() {
+export const TodoList: Component = () => {
   const [text, setText] = createSignal<string>("");
 
   function addToList(event: Event) {
@@ -18,18 +19,13 @@ export function TodoList() {
   }
 
   return (
-    // TODO: Mal gucken wie mit scoped element selectors aussehen würde.
-    // Man könnte sich halt abstraktion sparen und nur nutzen wenn es nötig ist bzw.
-    // wenn ein tag mehr als einmal vorkommt und dabei mindestens zwei verschiedene
-    // UI elemente rendert. man kann den scope ja from-to setzen (donut scope).
-    // Könnte gut sein, wenn auch iwo komplexer in manchen situationen
     <div class="todo-list">
       <form class="form" onSubmit={addToList}>
-        {/* TODO: Try out controlled & uncontrolled input binding in the frameworks */}
-        {/* <TextInput> */}
+        <TextInput initialValue={text()} />
         <input value={text()} onInput={(e) => setText(e.target.value)} />
-        {/* WIP: checking some limits & patterns */}
-        <Button attributes={{ type: "submit" }}>add</Button>
+        <Button element={{ tag: "button", attributes: { type: "submit" } }}>
+          add
+        </Button>
       </form>
       <ol class="list">
         <For each={todoListStore.items()}>
@@ -38,4 +34,4 @@ export function TodoList() {
       </ol>
     </div>
   );
-}
+};

@@ -6,6 +6,9 @@
   "files.insertFinalNewline": false,
 
   // Extension: gencer.html-slim-scss-css-class-completion
+  // TODO: fix these `style` object member autocompletions
+  // For solid at least i do not even need this extension at all i guess.
+  // -> Is the extension unable to read then new @rules or @rules in general?
   "html-css-class-completion.includeGlobPattern": "**/*.{css,scss,tsx}",
   "html-css-class-completion.enableScssFindUsage": true,
 

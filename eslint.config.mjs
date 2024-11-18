@@ -35,6 +35,7 @@ export default typescriptEslint.config(
         },
       ],
       "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     },
   },
 

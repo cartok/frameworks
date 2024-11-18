@@ -9,8 +9,12 @@ const [store, setStore] = createStore<TodoListStore>({
   items: new Map(),
 });
 
+// Just some mocks
+// eslint-disable-next-line solid/reactivity
 addToList("foo");
+// eslint-disable-next-line solid/reactivity
 addToList("bar");
+// eslint-disable-next-line solid/reactivity
 addToList(
   "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
 );
