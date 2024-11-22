@@ -7,7 +7,7 @@
 - add vue
 - add angular with signals
 
-# 3. finish prettier & eslint configuration
+# 3. finish prettier & eslint configuration + add additional css linting
 
 - prettier
 - more custom eslint rules
@@ -20,6 +20,7 @@
 - vite-plugin-eslint testen. ggf. die vite config dafür im vite ordner als base config
   anlegen usw.
 - fix these `style` object member autocompletions
+- add css linting, to for example prevent selecting elements directly
 
 ---
 
