@@ -1,6 +1,7 @@
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import pluginSolid from "eslint-plugin-solid";
+import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
 import typescriptEslint from "typescript-eslint";
 
@@ -17,6 +18,10 @@ export default typescriptEslint.config(
     files: ["workspaces/apps/vite/solid/**/*"],
     ...pluginSolid.configs["flat/recommended"],
     ...pluginSolid.configs["flat/typescript"],
+  },
+  {
+    files: ["workspaces/apps/vite/vue/**/*"],
+    ...pluginVue.configs["flat/recommended"],
   },
 
   /* Custom */
