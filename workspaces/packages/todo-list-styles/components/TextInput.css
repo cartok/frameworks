@@ -1,0 +1,8 @@
+@layer component {
+  @scope (.text-input) {
+    :scope {
+      background-color: orange;
+      padding: 0 calc(var(--space) * 2);
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@layer reset, base, component, page, a, b, c, d, atomic;
+
+@import "./base/reset.css" layer(reset);
+@import "./base/colors.css" layer(base);
+@import "./base/variables.css" layer(base);
+@import "./base/typography.css" layer(base);

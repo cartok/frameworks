@@ -1,5 +1,7 @@
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import tsResolver from "eslint-import-resolver-typescript";
+import pluginImportX from "eslint-plugin-import-x";
 import pluginSolid from "eslint-plugin-solid";
 import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
@@ -12,6 +14,23 @@ export default typescriptEslint.config(
   eslint.configs.recommended,
   ...typescriptEslint.configs.strict,
   ...typescriptEslint.configs.stylistic,
+
+  // TODO: Finish eslint configuration to allow resolving workspace packages.
+  // - https://github.com/un-ts/eslint-plugin-import-x
+  // - or https://www.npmjs.com/package/eslint-import-resolver-typescript
+  ...pluginImportX.flatConfigs.recommended,
+  ...pluginImportX.flatConfigs.typescript,
+  {
+    settings: {
+      "import-x/resolver": {
+        "@cartok/todo-list-styles": {
+          name: "package-resolver",
+          someConfig: value,
+          resolver: tsResolver,
+        },
+      },
+    },
+  },
 
   /* Apps */
   {

@@ -1,0 +1,7 @@
+{
+  "name": "@cartok/todo-list-styles",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.css"
+}
