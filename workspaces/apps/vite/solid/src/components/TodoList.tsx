@@ -1,14 +1,14 @@
-import { createSignal, For, type Component } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { Button } from "~/components/Button";
+import { TextInputControlled } from "~/components/TextInput";
 import { todoListStore } from "~/components/TodoList.store";
-import { TodoListItem } from "~/components/TodoListItem";
+import { TodoListFormItem, TodoListItem } from "~/components/TodoListItem";
 import "./TodoList.css";
-import { TextInput } from "~/components/TextInput";
 
-export const TodoList: Component = () => {
+export function TodoList() {
   const [text, setText] = createSignal<string>("");
 
-  function addToList(event: Event) {
+  function submitAddToList(event: Event) {
     event.preventDefault();
 
     if (!text()) {
@@ -20,21 +20,20 @@ export const TodoList: Component = () => {
 
   return (
     <div class="todo-list">
-      <form class="form" onSubmit={addToList}>
-        <TextInput initialValue={text()} />
-        <input value={text()} onInput={(e) => setText(e.target.value)} />
-        <Button
-          size="double"
-          element={{ tag: "button", attributes: { type: "submit" } }}
-        >
+      <form class="form" onSubmit={submitAddToList}>
+        <TextInputControlled value={text} setValue={setText} />
+        <Button element={{ tag: "button", attributes: { type: "submit" } }}>
           add
         </Button>
       </form>
-      <ol class="list">
+      <ul class="list">
         <For each={todoListStore.items()}>
           {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
+          {/* {([id, item]) => (
+            <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
+          )} */}
         </For>
-      </ol>
+      </ul>
     </div>
   );
-};
+}

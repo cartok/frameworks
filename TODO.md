@@ -1,12 +1,13 @@
 # 1. continue (solid csr)
 
-- get rid of todos & misc stuff / tests + refactor the whole solidjs code
-- finish solid cleanup & css refactoring (element selector rule) + move css out to a separate package
-- do more for a11y, might become be a small package so that i can use it for all apps
-- finish context provider example
-- fix css autocompletion extension
+- ssr with elysia
 
-# 2. finish prettier & eslint configuration
+# 2. next frameworks
+
+- add vue
+- add angular with signals
+
+# 3. finish prettier & eslint configuration
 
 - prettier
 - more custom eslint rules
@@ -20,14 +21,12 @@
   anlegen usw.
 - fix these `style` object member autocompletions
 
-# 3. next framework
-
-- add one other app implementation, one of: vue, svelte, angular, lit, elysia & htmx
-
 ---
 
 # later: project improvements
 
+- more work on a11y and html element attribute interfaces in general (in the solidjs app example)
+- create a good reusable solution to enforce aria attributes for each implementation
 - turbo tasks
   - lint
   - format

@@ -1,4 +1,5 @@
-import { type JSX, createMemo, mergeProps } from "solid-js";
+import { type JSX, mergeProps } from "solid-js";
+import { Dynamic } from "solid-js/web";
 import type { ParentElementProps, ValidElementAttributes } from "~/types";
 import "./Button.css";
 
@@ -10,6 +11,11 @@ type ValidElements = keyof Pick<
 type ButtonProps = {
   size?: "default" | "double" | "hug";
 };
+
+// TODO: Create some wrapper types or HOCs
+// function withElement()
+// function withAria()
+// function withEvents()
 
 export function Button<T extends ValidElements>(
   props: ParentElementProps<T, ButtonProps>
@@ -26,28 +32,19 @@ export function Button<T extends ValidElements>(
     },
   };
 
-  const Element = createMemo<string>(() => props.element.tag);
-  const mergedProps = mergeProps(defaultProps, defaultElementProps, props);
-
-  // TODO: finish basic component
-  // TODO: aria
+  // eslint-disable-next-line solid/reactivity
+  props = mergeProps(defaultProps, defaultElementProps, props);
 
   return (
-    <Element
+    <Dynamic
       classList={{
         button: true,
-        [mergedProps.size as string]: true,
+        [props.size as string]: true,
       }}
-      component={props.element.tag}
-      {...mergedProps.element.attributes}
+      component={props.element.tag as string}
+      {...props.element.attributes}
     >
-      {mergedProps.children}
-    </Element>
-  );
-}
-
-function TEST() {
-  return (
-    <Button element={{ tag: "button", attributes: { type: "" } }}>sdf</Button>
+      {props.children}
+    </Dynamic>
   );
 }
