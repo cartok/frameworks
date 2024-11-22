@@ -1,11 +1,12 @@
 # 1. continue (solid csr)
 
-- ssr with elysia
+- move css out to package
 
 # 2. next frameworks
 
 - add vue
-- add angular with signals
+- add angular (with signals)
+- ssr for solidjs (with elysia)
 
 # 3. finish prettier & eslint configuration + add additional css linting
 
@@ -19,7 +20,6 @@
   - ...
 - vite-plugin-eslint testen. ggf. die vite config dafür im vite ordner als base config
   anlegen usw.
-- fix these `style` object member autocompletions
 - add css linting, to for example prevent selecting elements directly
 
 ---
@@ -27,7 +27,7 @@
 # later: project improvements
 
 - more work on a11y and html element attribute interfaces in general (in the solidjs app example)
-- create a good reusable solution to enforce aria attributes for each implementation
+  - then create a good reusable solution to enforce aria attributes for each implementation
 - turbo tasks
   - lint
   - format
@@ -37,4 +37,6 @@
   - hooks
     - pre-commit: lint, format
     - pre-push: pre-commit + tests
-- vscode tasks
+- add vscode tasks
+
+# there-after: backend with db + htmx
