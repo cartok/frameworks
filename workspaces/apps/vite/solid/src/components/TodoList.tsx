@@ -1,9 +1,11 @@
-import { createSignal, For } from "solid-js";
+import "@cartok/todo-list-styles/components/TodoList.css";
+import { createSignal, For, AccessorArray } from "solid-js";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
 import { todoListStore } from "~/components/TodoList.store";
-import { TodoListFormItem, TodoListItem } from "~/components/TodoListItem";
-import "./TodoList.css";
+import { TodoListItem } from "~/components/TodoListItem";
+
+export default "sdf";
 
 export function TodoList() {
   const [text, setText] = createSignal<string>("");
@@ -29,6 +31,7 @@ export function TodoList() {
       <ul class="list">
         <For each={todoListStore.items()}>
           {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
+          {/* TODO: cleanup */}
           {/* {([id, item]) => (
             <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
           )} */}

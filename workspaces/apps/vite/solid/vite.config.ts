@@ -10,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": "/src",
+      // "@cartok/todo-list-styles": "workspaces/packages/todo-list-styles",
     },
   },
 });

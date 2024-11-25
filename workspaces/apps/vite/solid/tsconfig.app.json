@@ -18,5 +18,5 @@
     "jsxImportSource": "solid-js",
     "allowJs": true
   },
-  "include": ["src"]
+  "include": ["src", "../../../packages/todo-list-styles/index.d.ts"]
 }

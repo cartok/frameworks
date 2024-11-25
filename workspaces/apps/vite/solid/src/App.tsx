@@ -1,4 +1,5 @@
-import "./App.css";
+// import "./App.css";
+import "@cartok/todo-list-styles";
 import { Content } from "./components/Content";
 import { Header } from "./components/Header";
 import { TodoList } from "./components/TodoList";

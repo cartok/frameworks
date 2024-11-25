@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "moduleResolution": "nodenext",
+
     // Aliases
     "baseUrl": ".",
     "paths": {

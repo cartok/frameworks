@@ -24,6 +24,10 @@
 
 ## Why this formatting & linting setup?
 
+### Prettier
+
+- https://prettier.io/docs/en/rationale.html#what-prettier-is-_not_-concerned-about
+
 ### Basic Rules
 
 ### Custom Rules

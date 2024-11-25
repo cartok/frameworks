@@ -1,7 +1,7 @@
+import "@cartok/todo-list-styles/components/TodoListItem.css";
 import { createSignal, type ParentProps } from "solid-js";
 import { Button } from "./Button";
 import { todoListStore } from "./TodoList.store";
-import "./TodoListItem.css";
 
 // TODO: test with orca & WAVE with aria vs with form.
 // create form component (should be better for a11y but wanna see the difference)

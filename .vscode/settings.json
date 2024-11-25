@@ -19,6 +19,7 @@
 
   // Code formatting, wrapping, auto-fix and auto-import.
   "eslint.useFlatConfig": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.suggest.autoImports": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
@@ -29,6 +30,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll": "always",
+      // Mit eslint-plugin-unused-imports
       "source.organizeImports": "never",
       "source.addMissingImports": "always"
     }

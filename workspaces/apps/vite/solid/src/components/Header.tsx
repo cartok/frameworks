@@ -1,5 +1,5 @@
+import "@cartok/todo-list-styles/components/Header.css";
 import { children, type ParentProps } from "solid-js";
-import "./Header.css";
 
 export function Header(props: ParentProps) {
   const resolvedChildren = children(() => props.children);

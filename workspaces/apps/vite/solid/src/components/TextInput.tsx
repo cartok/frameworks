@@ -1,11 +1,11 @@
+import "@cartok/todo-list-styles/components/TextInput.css";
 import {
   createSignal,
   type Accessor,
   type Setter,
   type VoidProps,
 } from "solid-js";
-import type { EventHandlerNames, ValidElementAttributes } from "~/types";
-import "./TextInput.css";
+import { type EventHandlerNames, type ValidElementAttributes } from "~/types";
 
 export function TextInput(
   props: VoidProps<{
