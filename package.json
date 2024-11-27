@@ -15,6 +15,8 @@
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-import-x": "^4.4.3",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
     "eslint-plugin-solid": "~0.14.4",
     "eslint-plugin-unused-imports": "^4.1.4",
     "eslint-plugin-vue": "~9.31.0",
