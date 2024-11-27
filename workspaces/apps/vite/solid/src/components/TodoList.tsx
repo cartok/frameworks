@@ -1,11 +1,9 @@
 import "@cartok/todo-list-styles/components/TodoList.css";
-import { createSignal, For, AccessorArray } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
 import { todoListStore } from "~/components/TodoList.store";
 import { TodoListItem } from "~/components/TodoListItem";
-
-export default "sdf";
 
 export function TodoList() {
   const [text, setText] = createSignal<string>("");

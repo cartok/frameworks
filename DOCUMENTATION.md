@@ -12,7 +12,7 @@
 - (not used yet) To start related packages together like a backend combined with some frontend
 - (not used yet) To automatically build packages that changed, when required by another workspace
 
-## Why `pnpm`?
+## Why `pnpm` (and not bun), why eventually both?
 
 ## Why this engine setup?
 
@@ -21,6 +21,8 @@
 - package.json
 
 ## Why this `tsconfig` setup and how does it work?
+
+### Why import-x?
 
 ## Why this formatting & linting setup?
 

@@ -1,8 +1,6 @@
 import "@cartok/todo-list-styles/components/Button.css";
 import { type JSX, mergeProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
-// TODO: fix
-// eslint-disable-next-line import-x/no-unresolved
 import { type ParentElementProps, type ValidElementAttributes } from "~/types";
 
 type ValidElements = keyof Pick<

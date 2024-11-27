@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./workspaces/apps/vite/solid/src/*"]
+    },
+  }
+}
