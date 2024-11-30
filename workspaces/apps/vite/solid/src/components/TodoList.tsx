@@ -3,7 +3,7 @@ import { createSignal, For } from "solid-js";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
 import { todoListStore } from "~/components/TodoList.store";
-import { TodoListItem } from "~/components/TodoListItem";
+import { TodoListFormItem } from "~/components/TodoListItem";
 
 export function TodoList() {
   const [text, setText] = createSignal<string>("");
@@ -28,11 +28,9 @@ export function TodoList() {
       </form>
       <ul class="list">
         <For each={todoListStore.items()}>
-          {([id, item]) => <TodoListItem id={id}>{item.text}</TodoListItem>}
-          {/* TODO: cleanup */}
-          {/* {([id, item]) => (
+          {([id, item]) => (
             <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
-          )} */}
+          )}
         </For>
       </ul>
     </div>
