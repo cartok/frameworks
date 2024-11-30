@@ -40,28 +40,34 @@ The Framework selection was made checking trends via influencers like Theo and P
 - Create a TODO List (CSR)
 - Test router by linking to the TODO List from the index page
 - Test lazy loading of images and components on another page
-- Create a reusable CSS reset that I can use everwhere
-  - move it to a separate package
-- CSS: **Try to use latest CSS features (`@layer`, `@scope`, `@container`)**. And just try to find a good solution that I can use anywhere... When I would use inline styles, I could not reuse them but it would be most simplistic. When I would use CSS files, I could simply reuse them accross these frameworks...
-  UPDATE: CSS nesting is already a thing in major browsers: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting - Class name concatenation like in preprocessors does not work though,
-  It's not a preprocessor and not capable. But its propably not required. As everthing is scoped
-  and flag generation is still possible, just not in a systematic style, which I would prefer but
-  whatever. Propably still better to use the standard, than opening the SCSS crap-box.
-  - Maybe there is a minimalistic and fast pre-processor like SASS but without any feature, just nesting. I would like to have nested class generation but I do not want to have all the other features and oppinons in the way.
+- [x] Create a reusable CSS reset that I can use everwhere
+  - **Try to use latest CSS features (`@layer`, `@scope`, `@container`)**. CSS nesting is already a thing in major browsers: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting - Class name concatenation like in preprocessors does not work though,
+    It's not a preprocessor and not capable. But its propably not required. As everthing is scoped
+    and flag generation is still possible, just not in a systematic style, which I would prefer but
+    whatever. Propably still better to use the standard, than opening the SCSS crap-box.
+    - Maybe there is a minimalistic and fast pre-processor like SASS but without any feature, just nesting. I would like to have nested class generation but I do not want to have all the other features and oppinons in the way.
 
 #### Frameworks
 
-- [ ] Solid (wip)
+- [ ] Solid
+- [ ] React
 - [ ] Svelte
 - [ ] Lit
 - [ ] Angular
 - [ ] Vue
+
+#### SSR/SGG
+
+- [ ] Nuxt
+- [ ] Next
+- [ ] Vike
 
 ### Stage 2
 
 - Try out htmx, render via SSR and realize simple CRUD using the fastest backend frameworks.
 - If framework is rather a lib and choice of database is up to me i'd want to try out Couchbase or Scylla.
 - Add SSR for all frameworks from **Stage 1**
+  - Compare vike with nextjs and nuxtjs
 
 #### Frameworks
 
