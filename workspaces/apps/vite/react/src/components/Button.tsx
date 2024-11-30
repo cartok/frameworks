@@ -1,6 +1,7 @@
 import "@cartok/todo-list-styles/components/Button.css";
-import { type JSX, mergeProps } from "solid-js";
-import { Dynamic } from "solid-js/web";
+import clsx from "clsx";
+import mergeProps from "merge-props";
+import { type JSX } from "react";
 import { type ParentElementProps, type ValidElementAttributes } from "~/types";
 
 type ValidElements = keyof Pick<
@@ -11,11 +12,6 @@ type ValidElements = keyof Pick<
 type ButtonProps = {
   size?: "default" | "double" | "hug";
 };
-
-// TODO: Create some wrapper types or HOCs
-// function withElement()
-// function withAria()
-// function withEvents()
 
 export function Button<T extends ValidElements>(
   props: ParentElementProps<T, ButtonProps>
@@ -32,19 +28,18 @@ export function Button<T extends ValidElements>(
     },
   };
 
-  // eslint-disable-next-line solid/reactivity
   props = mergeProps(defaultProps, defaultElementProps, props);
 
+  const Element = props.element.tag as string;
+
   return (
-    <Dynamic
-      classList={{
-        button: true,
+    <Element
+      className={clsx("button", {
         [props.size as string]: true,
-      }}
-      component={props.element.tag as string}
+      })}
       {...props.element.attributes}
     >
       {props.children}
-    </Dynamic>
+    </Element>
   );
 }
