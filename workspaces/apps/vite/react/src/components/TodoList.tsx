@@ -3,7 +3,7 @@ import { useCallback, useState, type FormEvent } from "react";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
 import { todoListStore } from "~/components/TodoList.store";
-import { TodoListFormItem } from "~/components/TodoListItem";
+// import { TodoListFormItem } from "~/components/TodoListItem";
 
 export function TodoList() {
   const [text, setText] = useState<string>("");
@@ -31,11 +31,9 @@ export function TodoList() {
         </Button>
       </form>
       <ul className="list">
-        <For each={todoListStore.items()}>
-          {([id, item]) => (
-            <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
-          )}
-        </For>
+        {/* {[].map(([id, item]) => (
+          <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
+        )} */}
       </ul>
     </div>
   );

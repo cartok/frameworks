@@ -1,23 +1,15 @@
-import { createMemo, createUniqueId } from "solid-js";
-import { createStore } from "solid-js/store";
+import { useId, useMemo } from "react";
 
 type TodoListItem = { text: string };
 type TodoListItems = Map<string, TodoListItem>;
 type TodoListStore = { items: TodoListItems };
 
-const [store, setStore] = createStore<TodoListStore>({
-  items: new Map(),
-});
-
 // Just some mocks
-// eslint-disable-next-line solid/reactivity
-addToList("foo");
-// eslint-disable-next-line solid/reactivity
-addToList("bar");
-// eslint-disable-next-line solid/reactivity
-addToList(
-  "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
-);
+// addToList("foo");
+// addToList("bar");
+// addToList(
+//   "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
+// );
 
 function addToList(text: string) {
   const sortedList: [string, TodoListItem][] = [

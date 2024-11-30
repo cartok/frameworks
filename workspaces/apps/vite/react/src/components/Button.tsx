@@ -30,7 +30,7 @@ export function Button<T extends ValidElements>(
 
   props = mergeProps(defaultProps, defaultElementProps, props);
 
-  const Element = props.element.tag as string;
+  const Element = props.element.tag;
 
   return (
     <Element
