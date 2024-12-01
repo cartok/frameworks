@@ -1,11 +1,18 @@
 import "@cartok/todo-list-styles/components/TodoListItem.css";
 import clsx from "clsx";
-import { useState, type FormEvent, type PropsWithChildren } from "react";
+import {
+  useCallback,
+  useContext,
+  useState,
+  type FormEvent,
+  type PropsWithChildren,
+} from "react";
+import { TodoListStoreContext } from "~/components/TodoList.store";
 import { Button } from "./Button";
-import { todoListStore } from "./TodoList.store";
 
 export function TodoListItem(props: PropsWithChildren<{ id: string }>) {
   const [beforeDelete, setBeforeDelete] = useState(false);
+  const { dispatch } = useContext(TodoListStoreContext);
 
   return (
     <li className="todo-list-item">
@@ -17,7 +24,7 @@ export function TodoListItem(props: PropsWithChildren<{ id: string }>) {
         element={{
           tag: "button",
           attributes: {
-            onClick: () => todoListStore.actions.removeFromList(props.id),
+            onClick: () => dispatch({ type: "remove-from-list", id: props.id }),
             onMouseEnter: () => setBeforeDelete(true),
             onMouseLeave: () => setBeforeDelete(false),
           },
@@ -31,11 +38,15 @@ export function TodoListItem(props: PropsWithChildren<{ id: string }>) {
 
 export function TodoListFormItem(props: PropsWithChildren<{ id: string }>) {
   const [beforeDelete, setBeforeDelete] = useState(false);
+  const { dispatch } = useContext(TodoListStoreContext);
 
-  function submitRemove(event: FormEvent) {
-    event.preventDefault();
-    todoListStore.actions.removeFromList(props.id);
-  }
+  const submitRemove = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+      dispatch({ type: "remove-from-list", id: props.id });
+    },
+    [props.id]
+  );
 
   return (
     <li className="todo-list-item">

@@ -1,12 +1,13 @@
 import "@cartok/todo-list-styles/components/TodoList.css";
-import { useCallback, useState, type FormEvent } from "react";
+import { useCallback, useContext, useState, type FormEvent } from "react";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
-import { todoListStore } from "~/components/TodoList.store";
-// import { TodoListFormItem } from "~/components/TodoListItem";
+import { TodoListStoreContext } from "~/components/TodoList.store";
+import { TodoListFormItem } from "~/components/TodoListItem";
 
 export function TodoList() {
   const [text, setText] = useState<string>("");
+  const { state, dispatch } = useContext(TodoListStoreContext);
 
   const submitAddToList = useCallback(
     (event: FormEvent) => {
@@ -16,9 +17,9 @@ export function TodoList() {
         return;
       }
 
-      todoListStore.actions.addToList(text);
-      // TODO: check lintint
+      dispatch({ type: "add-to-list", item: { text } });
     },
+    // TODO: Check linting.
     [text]
   );
 
@@ -31,9 +32,12 @@ export function TodoList() {
         </Button>
       </form>
       <ul className="list">
-        {/* {[].map(([id, item]) => (
-          <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
-        )} */}
+        {Array.from(state.items.entries()).map(([id, item]) => (
+          // TODO: React linting should ask for key!
+          <TodoListFormItem id={id} key={id}>
+            {item.text}
+          </TodoListFormItem>
+        ))}
       </ul>
     </div>
   );

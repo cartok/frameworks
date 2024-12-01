@@ -1,7 +1,8 @@
 # Stage 1: React
 
-- Fix linting
-- Create components from those of Solid
+- Fix react linting
+- Create a Redux store example
+- Create a Next.js example
 
 # Stage 0: Code formatting
 

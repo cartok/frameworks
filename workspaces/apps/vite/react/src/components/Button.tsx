@@ -1,7 +1,7 @@
 import "@cartok/todo-list-styles/components/Button.css";
 import clsx from "clsx";
-import mergeProps from "merge-props";
-import { type JSX } from "react";
+import { deepmerge } from "deepmerge-ts";
+import { createElement, type JSX } from "react";
 import { type ParentElementProps, type ValidElementAttributes } from "~/types";
 
 type ValidElements = keyof Pick<
@@ -28,18 +28,19 @@ export function Button<T extends ValidElements>(
     },
   };
 
-  props = mergeProps(defaultProps, defaultElementProps, props);
+  const mergedProps = deepmerge(
+    { ...defaultProps, ...defaultElementProps },
+    props
+  );
 
-  const Element = props.element.tag;
-
-  return (
-    <Element
-      className={clsx("button", {
-        [props.size as string]: true,
-      })}
-      {...props.element.attributes}
-    >
-      {props.children}
-    </Element>
+  return createElement(
+    mergedProps.element.tag,
+    {
+      className: clsx("button", {
+        [mergedProps.size as string]: true,
+      }),
+      ...mergedProps.element.attributes,
+    },
+    mergedProps.children
   );
 }
