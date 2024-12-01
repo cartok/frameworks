@@ -20,18 +20,18 @@ addToList(
 );
 
 function addToList(text: string) {
+  const items = new Map(store.items);
   const sortedList: [string, TodoListItem][] = [
-    ...Array.from(store.items.entries()),
     [createUniqueId(), { text }],
+    ...Array.from(items.entries()),
   ];
-
-  sortedList.reverse();
   setStore("items", new Map(sortedList));
 }
 
 function removeFromList(id: string) {
-  store.items.delete(id);
-  setStore("items", new Map(store.items.entries()));
+  const items = new Map(store.items);
+  items.delete(id);
+  setStore("items", new Map(items.entries()));
 }
 
 const items = createMemo(() => Array.from(store.items));
