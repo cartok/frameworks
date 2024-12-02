@@ -3,7 +3,6 @@
 - Create a Redux store example
 - Create a Next.js example (reuse components)
 - Implement SSR using elysia (reuse components)
-- Fix react linting
 
 # Stage 0: Code formatting
 
