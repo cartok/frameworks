@@ -53,6 +53,7 @@ export default typescriptEslint.config(
   {
     files: ["workspaces/apps/**/*"],
     languageOptions: {
+      ecmaVersion: 2023,
       globals: globals.browser,
     },
   },
