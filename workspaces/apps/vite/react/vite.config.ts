@@ -8,4 +8,12 @@ export default defineConfig({
       "~": "/src",
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        root: "index.html",
+        redux: "indexRedux.html",
+      },
+    },
+  },
 });

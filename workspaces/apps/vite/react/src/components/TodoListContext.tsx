@@ -27,6 +27,7 @@ export const TodoListStoreContext = createContext<{
   dispatch: Dispatch<Actions>;
 }>({ state: initialState, dispatch: () => undefined });
 
+// TODO: Try to use `Immer` here.
 export const reducer: Reducer<Store, Actions> = (state, action) => {
   if (action.type === "add-to-list") {
     const items = new Map(state.todos);

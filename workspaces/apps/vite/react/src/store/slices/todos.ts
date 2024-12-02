@@ -1,20 +1,38 @@
 import type { TodoListItem } from "@cartok/todo-list-types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "~/store";
+import { createSelector } from "@reduxjs/toolkit";
+
+const initialState = new Map<string, TodoListItem>(
+  new Map([
+    [
+      crypto.randomUUID(),
+      {
+        text: "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque.",
+      },
+    ],
+    [crypto.randomUUID(), { text: "bar" }],
+    [crypto.randomUUID(), { text: "foo" }],
+  ])
+);
 
 export const todosSlice = createSlice({
   name: "todos",
-  initialState: new Map(),
+  initialState,
   reducers: {
-    addTodo: (
-      state,
-      { payload }: { payload: { id: string; item: TodoListItem } }
-    ) => {
-      state.set(payload.id, payload.item);
+    addTodo: (state, action: PayloadAction<TodoListItem>) => {
+      const id = crypto.randomUUID();
+      state.set(id, action.payload);
     },
-    removeTodo: (state, { payload }: { payload: { id: string } }) => {
-      state.delete(payload.id);
+    removeTodo: (state, action: PayloadAction<string>) => {
+      state.delete(action.payload);
     },
   },
 });
 
 export const { addTodo, removeTodo } = todosSlice.actions;
+
+export const selectTodos = createSelector(
+  (state: RootState) => state.todos,
+  (todos) => Array.from(todos.entries())
+);
