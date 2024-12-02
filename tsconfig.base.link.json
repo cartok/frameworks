@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "moduleResolution": "nodenext",
+    "lib": ["ES2023"],
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
 
-    // Aliases
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
-
-    // Linting
+    /* Linting */
     "strict": true,
-
-    /*
+    /**
       I want only warnings for unused vars or params, not errors though.
       Looks like typescript by default gives warnings.
 
@@ -19,16 +16,13 @@
     */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
     "noFallthroughCasesInSwitch": true,
-
-    /*
+    /**
       Requires declaration of css files as modules, which vite already does vite-env.d.ts.
       Might have to set it up for other (later) projects.
       - https://www.typescriptlang.org/tsconfig/#noUncheckedSideEffectImports
     */
     "noUncheckedSideEffectImports": true,
-
-    "noPropertyAccessFromIndexSignature": true
+    "noPropertyAccessFromIndexSignature": true,
   }
 }

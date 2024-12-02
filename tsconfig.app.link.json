@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.link.json",
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "resolveJsonModule": true,
+    "noEmit": true,
+
+    /* Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+
+    /* Unsure */
+    "skipLibCheck": true,
+  }
+}
