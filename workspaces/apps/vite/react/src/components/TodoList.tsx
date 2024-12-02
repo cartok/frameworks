@@ -2,7 +2,7 @@ import "@cartok/todo-list-styles/components/TodoList.css";
 import { useCallback, useContext, useState, type FormEvent } from "react";
 import { Button } from "~/components/Button";
 import { TextInputControlled } from "~/components/TextInput";
-import { TodoListStoreContext } from "~/components/TodoList.store";
+import { TodoListStoreContext } from "~/components/TodoListContext";
 import { TodoListFormItem } from "~/components/TodoListItem";
 
 export function TodoList() {
@@ -19,8 +19,7 @@ export function TodoList() {
 
       dispatch({ type: "add-to-list", item: { text } });
     },
-    // TODO: Check linting.
-    [text]
+    [dispatch, text]
   );
 
   return (
@@ -33,10 +32,7 @@ export function TodoList() {
       </form>
       <ul className="list">
         {Array.from(state.items.entries()).map(([id, item]) => (
-          // TODO: React linting should ask for key!
-          <TodoListFormItem id={id} key={id}>
-            {item.text}
-          </TodoListFormItem>
+          <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
         ))}
       </ul>
     </div>

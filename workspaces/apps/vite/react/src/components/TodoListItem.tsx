@@ -7,7 +7,7 @@ import {
   type FormEvent,
   type PropsWithChildren,
 } from "react";
-import { TodoListStoreContext } from "~/components/TodoList.store";
+import { TodoListStoreContext } from "~/components/TodoListContext";
 import { Button } from "./Button";
 
 export function TodoListItem(props: PropsWithChildren<{ id: string }>) {
@@ -45,7 +45,7 @@ export function TodoListFormItem(props: PropsWithChildren<{ id: string }>) {
       event.preventDefault();
       dispatch({ type: "remove-from-list", id: props.id });
     },
-    [props.id]
+    [dispatch, props.id]
   );
 
   return (

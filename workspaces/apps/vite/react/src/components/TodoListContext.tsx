@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useReducer,
-  type Dispatch,
-  type PropsWithChildren,
-  type Reducer,
-} from "react";
+import { createContext, type Dispatch, type Reducer } from "react";
 
 type TodoListItem = { text: string };
 type TodoListItems = Map<string, TodoListItem>;
@@ -18,7 +12,7 @@ type AddToListAction = Action<"add-to-list", { item: TodoListItem }>;
 type RemoveFromListAction = Action<"remove-from-list", { id: string }>;
 type Actions = AddToListAction | RemoveFromListAction;
 
-const initialState: TodoListStore = {
+export const initialState: TodoListStore = {
   items: new Map([
     [
       crypto.randomUUID(),
@@ -36,7 +30,7 @@ export const TodoListStoreContext = createContext<{
   dispatch: Dispatch<Actions>;
 }>({ state: initialState, dispatch: () => undefined });
 
-const reducer: Reducer<TodoListStore, Actions> = (state, action) => {
+export const reducer: Reducer<TodoListStore, Actions> = (state, action) => {
   if (action.type === "add-to-list") {
     const items = new Map(state.items);
     const sortedMap: [string, TodoListItem][] = [
@@ -52,13 +46,3 @@ const reducer: Reducer<TodoListStore, Actions> = (state, action) => {
 
   throw new Error("Unknown action");
 };
-
-export function TodoListStoreContextProvider(props: PropsWithChildren) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  return (
-    <TodoListStoreContext.Provider value={{ state, dispatch }}>
-      {props.children}
-    </TodoListStoreContext.Provider>
-  );
-}

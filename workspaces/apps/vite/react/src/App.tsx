@@ -2,7 +2,7 @@ import "@cartok/todo-list-styles/App.css";
 import { Content } from "~/components/Content";
 import { Header } from "~/components/Header";
 import { TodoList } from "~/components/TodoList";
-import { TodoListStoreContextProvider } from "~/components/TodoList.store";
+import { TodoListStoreContextProvider } from "~/components/TodoListContextProvider";
 
 function App() {
   return (
