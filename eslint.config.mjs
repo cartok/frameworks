@@ -2,6 +2,8 @@
 
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginReactRefresh from "eslint-plugin-react-refresh";
 import pluginSolid from "eslint-plugin-solid";
 import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
@@ -21,7 +23,7 @@ export default typescriptEslint.config(
     rules: {
       /* Normal rules */
       eqeqeq: "error",
-      "no-console": ["warn", { allow: ["debug", "error"] }],
+      "no-console": ["warn", { allow: ["assert", "debug", "error"] }],
 
       /* Typescript rules */
       "@typescript-eslint/no-unused-vars": "warn",
@@ -64,10 +66,18 @@ export default typescriptEslint.config(
     ...pluginVue.configs["flat/recommended"],
   },
   {
-    files: ["workspaces/apps/vite/react/**/*"],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+    files: [
+      "workspaces/apps/vite/react/**/*",
+      "workspaces/apps/vite/react-vike/**/*",
+      "workspaces/apps/react-next/**/*",
+    ],
+    plugins: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      "react-hooks": pluginReactHooks,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      "react-refresh": pluginReactRefresh,
     },
     rules: {
       "react-hooks/rules-of-hooks": "error",
