@@ -4,7 +4,7 @@ Just started this to try out some web frameworks.
 
 ## Installation
 
-```
+```shell
 corepack enable
 corepack pnpm i
 ```
@@ -66,6 +66,7 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
   - [ ] vanilla-css-extract
   - [ ] unocss
   - [ ] tailwind
+- [ ] Create a form example
 
 ### Stage 3
 
