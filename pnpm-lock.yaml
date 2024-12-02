@@ -62,6 +62,9 @@ importers:
       '@cartok/todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
+      '@cartok/todo-list-types':
+        specifier: workspace:*
+        version: link:../../../types
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -93,6 +96,9 @@ importers:
       '@cartok/todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
+      '@cartok/todo-list-types':
+        specifier: workspace:*
+        version: link:../../../types
       solid-js:
         specifier: ^1.9.3
         version: 1.9.3
@@ -133,6 +139,8 @@ importers:
         version: 2.1.10(typescript@5.7.2)
 
   workspaces/packages/todo-list-styles: {}
+
+  workspaces/types: {}
 
 packages:
 
@@ -891,7 +899,6 @@ packages:
 
   bun@1.1.38:
     resolution: {integrity: sha512-cr+UDFiEasyw0kKEbbD7kDewrI2vTo17JssVVjzBv/eNskeL2wikJ+4RNgUfoRqgthCjDZux7r6ELGgIGq6aWw==}
-    cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
 

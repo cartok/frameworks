@@ -2,3 +2,4 @@ packages:
   - "workspaces/apps/vite/*"
   - "workspaces/backends/*"
   - "workspaces/packages/*"
+  - "workspaces/types"

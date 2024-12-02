@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "solid-js": "^1.9.3",
-    "@cartok/todo-list-styles": "workspace:*"
+    "@cartok/todo-list-styles": "workspace:*",
+    "@cartok/todo-list-types": "workspace:*"
   },
   "devDependencies": {
     "vite-plugin-solid": "^2.10.2"

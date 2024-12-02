@@ -9,6 +9,10 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
   },
+  "dependencies": {
+    "@cartok/todo-list-styles": "workspace:*",
+    "@cartok/todo-list-types": "workspace:*"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tsconfig/svelte": "^5.0.4",
