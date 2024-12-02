@@ -1,9 +1,11 @@
 {
   "extends": "./tsconfig.base.link.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "moduleResolution": "Bundler",
     "module": "ESNext",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "target": "ES2023",
     "resolveJsonModule": true,
     "noEmit": true,
 
