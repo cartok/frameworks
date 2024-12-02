@@ -27,7 +27,7 @@ export function TodoList() {
         </Button>
       </form>
       <ul class="list">
-        <For each={todoListStore.items()}>
+        <For each={todoListStore.todos()}>
           {([id, item]) => (
             <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
           )}

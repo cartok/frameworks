@@ -1,8 +1,5 @@
+import type { Store, TodoListItem } from "@cartok/todo-list-types";
 import { createContext, type Dispatch, type Reducer } from "react";
-
-type TodoListItem = { text: string };
-type TodoListItems = Map<string, TodoListItem>;
-type TodoListStore = { items: TodoListItems };
 
 type Action<ActionName, ActionContext extends Record<string, unknown>> = {
   type: ActionName;
@@ -12,8 +9,8 @@ type AddToListAction = Action<"add-to-list", { item: TodoListItem }>;
 type RemoveFromListAction = Action<"remove-from-list", { id: string }>;
 type Actions = AddToListAction | RemoveFromListAction;
 
-export const initialState: TodoListStore = {
-  items: new Map([
+export const initialState: Store = {
+  todos: new Map([
     [
       crypto.randomUUID(),
       {
@@ -26,22 +23,22 @@ export const initialState: TodoListStore = {
 };
 
 export const TodoListStoreContext = createContext<{
-  state: TodoListStore;
+  state: Store;
   dispatch: Dispatch<Actions>;
 }>({ state: initialState, dispatch: () => undefined });
 
-export const reducer: Reducer<TodoListStore, Actions> = (state, action) => {
+export const reducer: Reducer<Store, Actions> = (state, action) => {
   if (action.type === "add-to-list") {
-    const items = new Map(state.items);
+    const items = new Map(state.todos);
     const sortedMap: [string, TodoListItem][] = [
       [crypto.randomUUID(), action.item],
       ...Array.from(items.entries()),
     ];
-    return { items: new Map(sortedMap) };
+    return { todos: new Map(sortedMap) };
   } else if (action.type === "remove-from-list") {
-    const items = new Map(state.items);
+    const items = new Map(state.todos);
     items.delete(action.id);
-    return { items: new Map(items.entries()) };
+    return { todos: new Map(items.entries()) };
   }
 
   throw new Error("Unknown action");
