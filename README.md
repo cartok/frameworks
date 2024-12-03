@@ -48,6 +48,8 @@ The Framework selection was made checking trends via influencers like Theo and P
 ### Stage 1: Entry
 
 - [x] Create a basic TODO List example for at least one framework
+  - [x] Start with **local state** to learn the basics
+  - [x] Replace (less duplication) with a **global state / store** solution
 - [x] Create a reusable CSS reset that I can use everwhere
 - [x] Create a package for all the CSS using latest CSS features
 - [x] Create a package to share the types of the datastructures the apps will use
