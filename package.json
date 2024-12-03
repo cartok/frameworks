@@ -11,6 +11,7 @@
     "bun": "^1.1.38",
     "eslint": "~9.14.0",
     "eslint-config-prettier": "~9.1.0",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "eslint-plugin-solid": "~0.14.4",
@@ -19,5 +20,9 @@
     "turbo": "~2.3.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "~8.14.0"
+  },
+  "scripts": {
+    "eslint-check": "eslint --print-config $npm_config_file | bat",
+    "eslint-rules": "eslint --print-config $npm_config_file | gojq '.rules | with_entries(select(.key | startswith(env.npm_config_search)))' | bat"
   }
 }

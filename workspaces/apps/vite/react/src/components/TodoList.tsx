@@ -32,7 +32,9 @@ export function TodoList() {
       </form>
       <ul className="list">
         {Array.from(state.todos.entries()).map(([id, item]) => (
-          <TodoListFormItem id={id}>{item.text}</TodoListFormItem>
+          <TodoListFormItem id={id} key={id}>
+            {item.text}
+          </TodoListFormItem>
         ))}
       </ul>
     </div>

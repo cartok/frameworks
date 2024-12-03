@@ -34,7 +34,9 @@ export function TodoListRedux() {
       </form>
       <ul className="list">
         {todos.map(([id, item]) => (
-          <TodoListItemRedux id={id}>{item.text}</TodoListItemRedux>
+          <TodoListItemRedux id={id} key={id}>
+            {item.text}
+          </TodoListItemRedux>
         ))}
       </ul>
     </div>

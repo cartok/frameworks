@@ -9,6 +9,28 @@ corepack enable
 corepack pnpm i
 ```
 
+## Tipps
+
+### ESLint configuration helper
+
+During eslint configuration there were often problems with plugins not being well prepared for flat config. To know if eslint aborts with an error I ran `eslint --print-config <file>` manually on some file to check if it breaks and afterwards I filtered out rules using a search string.
+
+The commands must be run directly through `npm`, the other package managers do not support the `variables` feature.
+
+Programms required:
+
+- goqj
+- bat
+
+```shell
+# See if eslint breaks on some file.
+npm run eslint-check --file=./workspaces/apps/vite/react/src/components/TodoList.tsx
+
+# Get all rules that start with "react" for a file.
+npm run eslint-rules --file=./workspaces/apps/vite/react/src/components/TodoList.tsx --search=react
+# > bunx eslint --print-config ./src/components/TodoList.tsx | gojq '.rules | with_entries(select(.key | startswith("react")))
+```
+
 ## What's currently in development?
 
 [Link to TODO.md](./TODO.md)
@@ -49,7 +71,7 @@ The Framework selection was made checking trends via influencers like Theo and P
 
 - [x] Create a basic TODO List example for at least one framework
   - [x] Start with **local state** to learn the basics
-  - [x] Replace (less duplication) with a **global state / store** solution
+  - [x] Create a **global state / store** solution as a better replacement
 - [x] Create a reusable CSS reset that I can use everwhere
 - [x] Create a package for all the CSS using latest CSS features
 - [x] Create a package to share the types of the datastructures the apps will use

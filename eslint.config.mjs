@@ -2,6 +2,7 @@
 
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReactRefresh from "eslint-plugin-react-refresh";
 import pluginSolid from "eslint-plugin-solid";
@@ -66,13 +67,23 @@ export default typescriptEslint.config(
     files: ["workspaces/apps/vite/vue/**/*"],
     ...pluginVue.configs["flat/recommended"],
   },
+  /**
+   * The react eslint plugins were not yet working well with flat config.
+   * So I had to mix it manually.
+   */
   {
     files: [
       "workspaces/apps/vite/react/**/*",
       "workspaces/apps/vite/react-vike/**/*",
       "workspaces/apps/react-next/**/*",
     ],
+    languageOptions: {
+      parserOptions: pluginReact.configs["jsx-runtime"].parserOptions,
+    },
     plugins: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      react: pluginReact,
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       "react-hooks": pluginReactHooks,
@@ -80,7 +91,12 @@ export default typescriptEslint.config(
       // @ts-ignore
       "react-refresh": pluginReactRefresh,
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     rules: {
+      ...pluginReact.configs.recommended.rules,
+      ...pluginReact.configs["jsx-runtime"].rules,
+      "react/jsx-key": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react-refresh/only-export-components": [
