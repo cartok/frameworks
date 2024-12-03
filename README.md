@@ -44,7 +44,7 @@ npm run eslint-rules --file=./workspaces/apps/vite/react/src/components/TodoList
 The Framework selection was made checking trends via influencers like Theo and Primeagen + personal preferences + benchmark results.
 
 - Frontend: https://krausest.github.io/js-framework-benchmark/current.html
-- Backend: https://www.techempower.com/benchmarks/#hw=ph&test=composite&section=datelysiaa-r22&l=xak45b-cn1&c=c
+- Backend: https://www.techempower.com/benchmarks/#hw=ph&test=composite&section=data-r22&l=wqkxdr-cn1&c=d
 
   The backend frameworks comparison has a filter set to only include languages I would like to use at this point in time, I don't want to learn `rust` right now, I know and like `dart`, `go` is easy to learn, `kotlin` is superior to `java` and has the best performing libraries (`rust` also) and `typescript` is what I know well already. Unfortunately, without searching further, there seem to be no good `dart` frameworks. The best `kotlin`, `java`, and `rust` frameworks leave everything behind. I can't believe how people can still use spring when looking at the benchmarks. For `typescript` there is only one good choice: `elysia`. The best `go` frameworks seem to be slower than `elysia` but might still be a good choice (especially if SSG is a requirement, but this is just an assumption). On the `java` / `kotlin` side `vertx-web` delivers most extreme performance. I still need to choose one `go` and `kotlin` framework out of `chi/herz/echo/gin` and `vertex-web/http4k` later.
 
