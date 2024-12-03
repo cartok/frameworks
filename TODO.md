@@ -1,13 +1,17 @@
-# Stage 1: React
+# React
 
 - Create a Redux store example
-  - thunks
-  - selectors
-- Use immer for the solid.js store
+- try out redux-logger
 - Create a Next.js example (reuse components)
-- Implement SSR using elysia (reuse components)
 
-# Stage 0: Code formatting
+- Implement "Stage 2: Features"
+
+# Update Solid.js
+
+- Use immer for the solid.js store
+- Implement "Stage 2: Features"
+
+# Code formatting & some automation
 
 - Configure Prettier
 - Create npm scripts
