@@ -56,20 +56,28 @@ The Framework selection was made checking trends via influencers like Theo and P
 
 ### Frontend Frameworks
 
-- [ ] Solid + SSR
+Checkmarks here only reference if "Stage 1" is done for those atm.
+
+- [x] Solid
+  - [ ] +SSR
   - [ ] Vike
-- [ ] React + SSR
+- [x] React
+  - [ ] +SSR
   - [ ] Vike
   - [ ] Next
   - [ ] Remix
-- [ ] Vue + SSR
+- [ ] Vue
+  - [ ] +SSR
   - [ ] Nuxt
   - [ ] Vike
-- [ ] Angular + @angular/ssr + @angular/dev-kit
-- [ ] Svelte + SSR
+- [ ] Angular
+  - [ ] +@angular/ssr +@angular/dev-kit
+- [ ] Svelte
+  - [ ] - SSR
   - [ ] Svelte Kit
   - [ ] Vike
-- [ ] Lit + SSR
+- [ ] Lit
+  - [ ] +SSR
 
 ## Stages
 
@@ -95,7 +103,7 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
     - [ ] Add an image to the start page which will function as LCP and ensure it is prefetched
     - [ ] Add an image outside of the initial viewport and ensure it is lazy loaded.
 - [ ] TODO List UI features
-  - [ ] Add a text filter for todo items including a `<label>` element (label, input, button)
+  - [ ] Add a text filter for todo items including label, input, button.
   - [ ] Add a checkbox (incl. rendering of checked items)
   - [ ] Performance: Try out lazy loading of components by adding a component which can display the full todo item text when clicking on an entry (enlarge the area, exchange, no modal).
 - [ ] Routing & Syncing
@@ -104,13 +112,12 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
 
 ### Stage 3: Explorations
 
-- [ ] Try out or update on CSS solutions
+- [ ] Implement different CSS solutions
   - [ ] vanilla-css-extract
-  - [ ] unocss
   - [ ] tailwind
+  - [ ] unocss
 - [ ] HTMX
-      Render via SSR and realize simple CRUD using the fastest backend frameworks.
-      If framework is rather a lib and choice of database is up to me i'd want to try out Couchbase or Scylla.
+      Render via SSR and realize simple CRUD using the fastest backend frameworks. Use Couchbase or Scylla if possible, otherwise Postgres or MongoDB.
 
 #### Backend Frameworks
 
@@ -150,10 +157,3 @@ _I did not check on template libraries for those frameworks yet._
 ### Stage 7: Benchmark
 
 Benchmarks under network & cpu throttling & real usage emulation.
-
-Path:
-
-- render home page
-- navigate to todo list page, which has a lot of todos stored already
-- add a few entries
-- delete a few entries
