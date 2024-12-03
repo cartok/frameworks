@@ -9,8 +9,6 @@ import App from "./AppRedux";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-      {/* TODO: get it running https://chatgpt.com/c/674ddea7-bafc-8002-9d53-49f3e90e75f2 */}
-      <h1>redux</h1>
       <App />
     </Provider>
   </StrictMode>

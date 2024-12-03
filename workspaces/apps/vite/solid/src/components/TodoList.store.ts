@@ -8,27 +8,28 @@ const [store, setStore] = createStore<Store>({
 
 // Just some mocks
 // eslint-disable-next-line solid/reactivity
-addToList("foo");
+addToList("1. foo");
 // eslint-disable-next-line solid/reactivity
-addToList("bar");
+addToList("2. bar");
 // eslint-disable-next-line solid/reactivity
 addToList(
-  "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
+  "3. Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque."
 );
 
+// TODO: Use immer and eventually reverse the memo array.
 function addToList(text: string) {
-  const prev = new Map(store.todos);
+  const prevCopy = new Map(store.todos);
   const next: [string, TodoListItem][] = [
     [createUniqueId(), { text }],
-    ...Array.from(prev.entries()),
+    ...Array.from(prevCopy.entries()),
   ];
   setStore("todos", new Map(next));
 }
 
 function removeFromList(id: string) {
-  const prev = new Map(store.todos);
-  prev.delete(id);
-  setStore("todos", new Map(prev.entries()));
+  const prevCopy = new Map(store.todos);
+  prevCopy.delete(id);
+  setStore("todos", new Map(prevCopy.entries()));
 }
 
 const todos = createMemo(() => Array.from(store.todos));

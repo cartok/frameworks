@@ -14,11 +14,11 @@ export const initialState: Store = {
     [
       crypto.randomUUID(),
       {
-        text: "Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque.",
+        text: "3. Suspendisse pulvinar risus dapibus mi volutpat, vitae iaculis turpis pellentesque.",
       },
     ],
-    [crypto.randomUUID(), { text: "bar" }],
-    [crypto.randomUUID(), { text: "foo" }],
+    [crypto.randomUUID(), { text: "2. bar" }],
+    [crypto.randomUUID(), { text: "1. foo" }],
   ]),
 };
 
