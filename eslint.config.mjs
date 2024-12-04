@@ -24,7 +24,7 @@ export default typescriptEslint.config(
     rules: {
       /* Normal rules */
       eqeqeq: "error",
-      "no-console": ["warn", { allow: ["assert", "debug", "error"] }],
+      "no-console": ["warn", { allow: ["log", "assert", "debug", "error"] }],
 
       /* Typescript rules */
       "@typescript-eslint/no-unused-vars": "warn",
