@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        redux: "indexRedux.html",
+        redux: "index-redux.html",
       },
     },
   },
