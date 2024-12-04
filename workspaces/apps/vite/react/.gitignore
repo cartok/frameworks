@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SSR output (should move them into a directory)
+server.js
+entry-client.js
+vite.config.js

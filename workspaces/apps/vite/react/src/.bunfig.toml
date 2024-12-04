@@ -1,0 +1,4 @@
+jsx = "react-jsxdev"
+jsxFactory = "h"
+jsxFragment = "Fragment"
+jsxImportSource = "react"

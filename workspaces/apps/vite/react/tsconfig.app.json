@@ -1,7 +1,8 @@
 {
   "extends": "./tsconfig.app.link.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react-jsxdev",
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["server.tsx"]
 }

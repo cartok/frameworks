@@ -1,0 +1,3 @@
+- Improve the server code
+- Add lazy loading to reducers / reducer injection (on page level for a good mix between simplicity and performance)
+- Add redux-logger - less important atm, without a logging service though, but I want to take a look.

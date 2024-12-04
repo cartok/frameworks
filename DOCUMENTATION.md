@@ -12,7 +12,10 @@
 - (not used yet) To start related packages together like a backend combined with some frontend
 - (not used yet) To automatically build packages that changed, when required by another workspace
 
-## Why `pnpm` (and not bun), why eventually both?
+## Why `pnpm` (and not bun) - UNCLEAR
+
+- Bun supports workspaces
+- Turborepo should also be independent
 
 ## Why this engine setup?
 
