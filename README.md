@@ -17,7 +17,7 @@ During eslint configuration there were often problems with plugins not being wel
 
 The commands must be run directly through `npm`, the other package managers do not support the `variables` feature.
 
-Programms required:
+Programs required:
 
 - goqj
 - bat
@@ -63,7 +63,6 @@ Checkmarks here only reference if "Stage 1" is done for those atm.
   - [ ] Vike
 - [x] React
   - [ ] +SSR
-  - [ ] Vike
   - [ ] Next
   - [ ] Remix
 - [ ] Vue
@@ -78,6 +77,11 @@ Checkmarks here only reference if "Stage 1" is done for those atm.
   - [ ] Vike
 - [ ] Lit
   - [ ] +SSR
+
+## Failures
+
+- react + stream ssr (`renderToPipeableStream`) requires nodejs streams, so elysia & bun does not work
+- react + vike does not yet fully support server components
 
 ## Stages
 
@@ -96,7 +100,7 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
 
 - [ ] Use [`mockend`](https://mockend.com/) to work with a mock backend
 - [ ] Performance
-  - [ ] Add SSR using elysia
+  - [ ] Add SSR using elysia (does not work)
     - [ ] if possible with HTML streaming
     - [ ] with lazy / partial hydration
   - [ ] Image loading
