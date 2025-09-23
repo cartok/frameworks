@@ -39,28 +39,17 @@ npm run eslint-rules --file=./workspaces/apps/vite/react/src/components/TodoList
 
 [Link to DOCUMENTATION.md](./DOCUMENTATION.md)
 
-## Framework selection
+## Framework benchmarks
 
-The Framework selection was made checking trends via influencers like Theo and Primeagen + personal preferences + benchmark results.
-
-- Frontend:
-  I'd better not comment this.
-
-  - js-framework-benchmark: https://krausest.github.io/js-framework-benchmark/current.html
-
-- Backend:
-  The backend frameworks comparison has a filter set to only include languages I would like to use at this point in time, I don't want to learn `rust` right now, I know and like `dart`, `go` is easy to learn, `kotlin` is superior to `java` and has the best performing libraries (`rust` also) and `typescript` is what I know well already. Unfortunately, without searching further, there seem to be no good `dart` frameworks. The best `kotlin`, `java`, and `rust` frameworks leave everything behind. I can't believe how people can still use spring when looking at the benchmarks. For `typescript` there is only one good choice: `elysia`. The best `go` frameworks seem to be slower than `elysia` but might still be a good choice (especially if SSG is a requirement, but this is just an assumption). On the `java` / `kotlin` side `vertx-web` delivers most extreme performance. I still need to choose one `go` and `kotlin` framework out of `chi/herz/echo/gin` and `vertex-web/http4k` later.
-
-  - Micro frameworks with `rust` and `javascript`: https://www.techempower.com/benchmarks/#hw=ph&test=composite&section=data-r22&l=wqkx6n-cn1&c=d
-  - Micro frameworks without `rust` and `javascript`: https://www.techempower.com/benchmarks/#hw=ph&test=composite&section=data-r22&l=xak45b-cn1&c=d
+- js-framework-benchmark: https://krausest.github.io/js-framework-benchmark/current.html
+- https://www.techempower.com/benchmarks/#section=data-r23
 
 ### Frontend Frameworks
 
-Checkmarks here only reference if "Stage 1" is done for those atm.
+Checkmarks here only reference if "Stage 1" is done for those atm. Can't find time and energy for side projects... I'm all-in for good.
 
 - [x] Solid
   - [ ] +SSR
-  - [ ] Vike
 - [x] React
   - [ ] +SSR
   - [ ] Next
@@ -68,13 +57,11 @@ Checkmarks here only reference if "Stage 1" is done for those atm.
 - [ ] Vue
   - [ ] +SSR
   - [ ] Nuxt
-  - [ ] Vike
 - [ ] Angular
   - [ ] +@angular/ssr +@angular/dev-kit
 - [ ] Svelte
   - [ ] - SSR
   - [ ] Svelte Kit
-  - [ ] Vike
 - [ ] Lit
   - [ ] +SSR
 
@@ -126,6 +113,7 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
 #### Backend Frameworks
 
 - [ ] ts: elyisa
+- [ ] rust: actix
 - [ ] go: chi/herz/echo/gin
 - [ ] kotlin: vertex-web/http4k
 
