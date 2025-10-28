@@ -52,19 +52,19 @@ export default typescriptEslint.config(
 
   /* App Scope */
   {
-    files: ["workspaces/apps/**/*"],
+    files: ["workspaces/frontends/**/*"],
     languageOptions: {
       ecmaVersion: 2023,
       globals: globals.browser,
     },
   },
   {
-    files: ["workspaces/apps/vite/solid/**/*"],
+    files: ["workspaces/frontends/vite/solid/**/*"],
     ...pluginSolid.configs["flat/recommended"],
     ...pluginSolid.configs["flat/typescript"],
   },
   {
-    files: ["workspaces/apps/vite/vue/**/*"],
+    files: ["workspaces/frontends/vite/vue/**/*"],
     ...pluginVue.configs["flat/recommended"],
   },
   /**
@@ -73,9 +73,9 @@ export default typescriptEslint.config(
    */
   {
     files: [
-      "workspaces/apps/vite/react/**/*",
-      "workspaces/apps/vite/react-vike/**/*",
-      "workspaces/apps/react-next/**/*",
+      "workspaces/frontends/vite/react/**/*",
+      "workspaces/frontends/vite/react-vike/**/*",
+      "workspaces/frontends/react-next/**/*",
     ],
     languageOptions: {
       parserOptions: pluginReact.configs["jsx-runtime"].parserOptions,

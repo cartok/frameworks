@@ -6,7 +6,7 @@ Just started this to try out some web frameworks.
 
 ```shell
 corepack enable
-corepack pnpm i
+corepack prepare pnpm@latest --activate
 ```
 
 ## Tipps
@@ -24,27 +24,39 @@ Programs required:
 
 ```shell
 # See if eslint breaks on some file.
-npm run eslint-check --file=./workspaces/apps/vite/react/src/components/TodoList.tsx
+npm run eslint-check --file=./workspaces/frontends/vite/react/src/components/TodoList.tsx
 
 # Get all rules that start with "react" for a file.
-npm run eslint-rules --file=./workspaces/apps/vite/react/src/components/TodoList.tsx --search=react
+npm run eslint-rules --file=./workspaces/frontends/vite/react/src/components/TodoList.tsx --search=react
 # > bunx eslint --print-config ./src/components/TodoList.tsx | gojq '.rules | with_entries(select(.key | startswith("react")))
 ```
 
-## What's currently in development?
+## Backends
 
-[Link to TODO.md](./TODO.md)
+- [ ] ts
+  - [x] nestjs (wip)
+  - [ ] elyisa
+- [ ] kotlin
+  - [ ] spring boot
+  - [ ] vertex
+- [ ] rust
+  - [ ] actix
+- BaaS
+  - [ ] appwrite
+  - [ ] supabase
 
-## Documentation
+### Benchmarks
 
-[Link to DOCUMENTATION.md](./DOCUMENTATION.md)
+- https://www.techempower.com/benchmarks/#section=data-r23
 
-## Framework benchmarks
+## Frontend
+
+### Benchmarks
 
 - js-framework-benchmark: https://krausest.github.io/js-framework-benchmark/current.html
 - https://www.techempower.com/benchmarks/#section=data-r23
 
-### Frontend Frameworks
+### Frameworks
 
 Checkmarks here only reference if "Stage 1" is done for those atm. Can't find time and energy for side projects... I'm all-in for good.
 
@@ -65,14 +77,14 @@ Checkmarks here only reference if "Stage 1" is done for those atm. Can't find ti
 - [ ] Lit
   - [ ] +SSR
 
-## Failures
+#### Failures
 
 - react + stream ssr (`renderToPipeableStream`) requires nodejs streams, so elysia & bun does not work
 - react + vike does not yet fully support server components
 
 ## Stages
 
-### Stage 1: Entry
+### Stage 1: Frontend Entry
 
 - [x] Create a basic TODO List example for at least one framework
   - [x] Start with **local state** to learn the basics
@@ -83,16 +95,24 @@ Checkmarks here only reference if "Stage 1" is done for those atm. Can't find ti
 
 _No need to implement every framework from in order to work on Stage 2 and 3._
 
-### Stage 2: Features
+### Stage 2: Backend
 
-- [ ] Use [`mockend`](https://mockend.com/) to work with a mock backend
+- [ ] Create backend incl. CI/CD (github), containerization (Docker Compose), deployment (Heroku, later AWS/GPC), Database (Postgres without ORM)
+  - [ ] NestJS
+  - [ ] Spring Boot (Kotlin)
+
+### Stage 3: Frontend Performance
+
 - [ ] Performance
-  - [ ] Add SSR using elysia (does not work)
+  - [ ] Add SSR
     - [ ] if possible with HTML streaming
     - [ ] with lazy / partial hydration
   - [ ] Image loading
     - [ ] Add an image to the start page which will function as LCP and ensure it is prefetched
     - [ ] Add an image outside of the initial viewport and ensure it is lazy loaded.
+
+### Stage 4: Frontend Core Features
+
 - [ ] TODO List UI features
   - [ ] Add a text filter for todo items including label, input, button.
   - [ ] Add a checkbox (incl. rendering of checked items)
@@ -100,52 +120,3 @@ _No need to implement every framework from in order to work on Stage 2 and 3._
 - [ ] Routing & Syncing
   - [ ] create start page with search input and search button, which redirects to todo page with search param set. make sure that the param is updated via the filter input on the todo page (there are 2 inputs)
   - [ ] create a page which does some simulated computation (setTimeout) and ensure that navigation change will not be blocked by rendering
-
-### Stage 3: Explorations
-
-- [ ] Implement different CSS solutions
-  - [ ] vanilla-css-extract
-  - [ ] tailwind
-  - [ ] unocss
-- [ ] HTMX
-      Render via SSR and realize simple CRUD using the fastest backend frameworks. Use Couchbase or Scylla if possible, otherwise Postgres or MongoDB.
-
-#### Backend Frameworks
-
-- [ ] ts: elyisa
-- [ ] rust: actix
-- [ ] go: chi/herz/echo/gin
-- [ ] kotlin: vertex-web/http4k
-
-_I did not check on template libraries for those frameworks yet._
-
-### Stage 4: Backend with Database
-
-- [ ] Add persistance to the TODO List
-
-#### Backend Frameworks
-
-- [ ] Appwrite
-- [ ] Supabase
-- Custom
-  - [ ] ts: elyisa
-  - [ ] go: chi/herz/echo/gin
-  - [ ] kotlin: vertex-web/http4k
-
-### Stage 5: UI/UX
-
-- [ ] Create a minimal design system for everything in Figma
-- [ ] Refactor: Update whole CSS and Components according to the design system
-- [ ] Work on great a11y support
-
-### Stage 6: Testing
-
-- [ ] unit tests
-- [ ] e2e tests
-- [ ] integration tests
-- [ ] build pipelines
-- [ ] deployment
-
-### Stage 7: Benchmark
-
-Benchmarks under network & cpu throttling & real usage emulation.

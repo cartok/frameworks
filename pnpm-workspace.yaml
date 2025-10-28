@@ -1,5 +1,10 @@
 packages:
-  - "workspaces/apps/vite/*"
-  - "workspaces/backends/*"
-  - "workspaces/packages/*"
-  - "workspaces/types"
+  - workspaces/frontends/vite/*
+  - workspaces/backends/*
+  - workspaces/packages/*
+  - workspaces/types
+
+ignoredBuiltDependencies:
+  - '@swc/core'
+  - bun
+  - esbuild

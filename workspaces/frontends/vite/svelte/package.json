@@ -1,5 +1,5 @@
 {
-  "name": "@cartok/todo-list-svelte",
+  "name": "framework-tests-frontend-vite-svelte",
   "private": true,
   "version": "0.0.0",
   "type": "module",

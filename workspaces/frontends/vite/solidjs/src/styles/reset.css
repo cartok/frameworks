@@ -27,9 +27,9 @@ body {
 * {
   /* TODO: The font setup could need some improvement. Can't I solve things without * selector? */
   /*
-      Always inherit the font, to use those defined in the project.
-      At least input, button, textarea, select need this.
-    */
+    Always inherit the font, to use those defined in the project.
+    At least input, button, textarea, select need this.
+  */
   font: inherit;
 
   /* Remove any paddings and margins */
@@ -52,20 +52,20 @@ body {
 
 /* TODO: Decide about how to display the border or if at all / conditionally (screen reader)? */
 *:focus-visible {
-  outline-width: var(--focus-visible-outline-width);
+  outline-width: var(--width-focus-visible-outline);
   outline-offset: 0px;
   outline-style: solid;
 }
 
 @media (prefers-color-scheme: light) {
   *:focus-visible {
-    outline-color: var(--focus-visible-outline-color--light);
+    outline-color: var(--color-focus-visible-outline--light, black);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   *:focus-visible {
-    outline-color: var(--focus-visible-outline-color--dark);
+    outline-color: var(--color-focus-visible-outline--dark, white);
   }
 }
 
@@ -76,6 +76,10 @@ input:focus-visible {
 /* Wondering why this is not default already. TODO: Should check if cursor changes on disabled button */
 button {
   cursor: pointer;
+
+  &:disabled {
+    cursor: var(--cursor-disabled, pointer);
+  }
 }
 
 /* By default inputs don't scale, have a outline and a browser defined background color */
@@ -83,7 +87,6 @@ input {
   width: 100%;
   /* TODO: Still required, cause its rather on foucs-visible's behave */
   outline: none;
-  /* TODO: What about inherit? */
   background-color: transparent;
 }
 
@@ -104,6 +107,7 @@ video,
 svg {
   display: inline-grid;
   max-width: 100%;
+  height: auto;
 }
 
 a:active,
