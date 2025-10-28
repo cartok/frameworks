@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: nest-no-orm-api-dev
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    command: pnpm start:dev
+
+  db:
+    container_name: nest-no-orm-db-dev

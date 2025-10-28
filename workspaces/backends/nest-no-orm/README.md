@@ -1,16 +1,51 @@
-# Docker
+## Development
 
-## Access database
+### Build
+
+```
+# From monorepo root directory
+# Build public base image
+docker build -t cartok1337/nest-no-orm-base -f ./workspaces/backends/nest-no-orm/Dockerfile.base ./ \
+  && docker push cartok1337/nest-no-orm-base:latest
+
+# Build private production image
+docker build -t cartok1337/nest-no-orm -f ./workspaces/backends/nest-no-orm/Dockerfile.prod ./ \
+  && docker push cartok1337/nest-no-orm
+```
+
+### Start / Develop
+
+```
+docker compose -f ./workspaces/backends/nest-no-orm/docker-compose.yml -f ./workspaces/backends/nest-no-orm/docker-compose.dev.yml up --build --remove-orphans
+```
+
+#### Test if API is running
+
+```
+curl localhost:3000
+```
+
+#### Access database cli
 
 Guide: https://www.postgresql.org/docs/current/tutorial-accessdb.html
+Ensure docker compose is up and the run those commands to access the databse:
 
 ```
-docker compose up
-docker exec -it -u postgres nest-no-orm-db sh
+docker exec -it -u postgres nest-no-orm-db-dev sh
 psql
-\h
-\q
+# \h for help
+# \q to exit
 ```
+
+# NestJS
+
+Original documentation is separated below. To run commands from root of monorepo use `--filter` option of `pnpm`, for example:
+
+```
+pnpm --filter framework-tests-backend-nest-no-orm lint
+```
+
+---
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>

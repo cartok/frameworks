@@ -1,0 +1,6 @@
+FROM cartok1337/nest-no-orm-base:latest
+
+RUN npm run build
+EXPOSE 3000
+
+CMD ["pnpm", "start:dev"]
