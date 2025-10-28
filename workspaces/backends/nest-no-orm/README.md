@@ -1,3 +1,17 @@
+# Docker
+
+## Access database
+
+Guide: https://www.postgresql.org/docs/current/tutorial-accessdb.html
+
+```
+docker compose up
+docker exec -it -u postgres nest-no-orm-db sh
+psql
+\h
+\q
+```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
