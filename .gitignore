@@ -178,3 +178,6 @@ dist-ssr
 
 # turbo
 .turbo
+
+# pnpm cache directories
+.pnpm-store
