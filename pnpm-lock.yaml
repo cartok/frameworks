@@ -165,10 +165,10 @@ importers:
         version: link:../../../types
       '@elysiajs/html':
         specifier: ^1.1.1
-        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)
+        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)
       '@elysiajs/static':
         specifier: ^1.1.1
-        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))
+        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))
       '@reduxjs/toolkit':
         specifier: ^2.4.0
         version: 2.4.0(react-redux@9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -180,13 +180,13 @@ importers:
         version: 7.1.3
       elysia:
         specifier: ^1.1.25
-        version: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
+        version: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
       elysia-compress:
         specifier: ^1.2.1
-        version: 1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)
+        version: 1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)
       elysia-connect-middleware:
         specifier: ^0.0.3
-        version: 0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))
+        version: 0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))
       immer:
         specifier: ^10.1.1
         version: 10.1.1
@@ -255,7 +255,7 @@ importers:
         version: 5.2.2
       svelte-check:
         specifier: ^4.0.5
-        version: 4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.7.3)
+        version: 4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.8.3)
       tslib:
         specifier: ^2.8.0
         version: 2.8.1
@@ -273,17 +273,17 @@ importers:
         version: link:../../../types
       vue:
         specifier: ^3.5.12
-        version: 3.5.13(typescript@5.7.3)
+        version: 3.5.13(typescript@5.8.3)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
-        version: 5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.7.3))
+        version: 5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.8.3))
       vite:
         specifier: ~6.0.2
         version: 6.0.2(@types/node@22.18.12)(terser@5.44.0)
       vue-tsc:
         specifier: ^2.1.8
-        version: 2.1.10(typescript@5.7.3)
+        version: 2.1.10(typescript@5.8.3)
 
   workspaces/packages/todo-list-styles: {}
 
@@ -5611,17 +5611,17 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@elysiajs/html@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)':
+  '@elysiajs/html@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)':
     dependencies:
       '@kitajs/html': 4.2.4
-      '@kitajs/ts-html-plugin': 4.1.0(@kitajs/html@4.2.4)(typescript@5.7.3)
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
+      '@kitajs/ts-html-plugin': 4.1.0(@kitajs/html@4.2.4)(typescript@5.8.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
     transitivePeerDependencies:
       - typescript
 
-  '@elysiajs/static@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))':
+  '@elysiajs/static@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))':
     dependencies:
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
       node-cache: 5.1.2
 
   '@emnapi/core@1.6.0':
@@ -6309,12 +6309,12 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@kitajs/ts-html-plugin@4.1.0(@kitajs/html@4.2.4)(typescript@5.7.3)':
+  '@kitajs/ts-html-plugin@4.1.0(@kitajs/html@4.2.4)(typescript@5.8.3)':
     dependencies:
       '@kitajs/html': 4.2.4
       chalk: 4.1.2
       tslib: 2.8.1
-      typescript: 5.7.3
+      typescript: 5.8.3
       yargs: 17.7.2
 
   '@lit-labs/ssr-dom-shim@1.2.1': {}
@@ -7076,10 +7076,10 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-vue@5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.7.3))':
+  '@vitejs/plugin-vue@5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       vite: 6.0.2(@types/node@22.18.12)(terser@5.44.0)
-      vue: 3.5.13(typescript@5.7.3)
+      vue: 3.5.13(typescript@5.8.3)
 
   '@volar/language-core@2.4.10':
     dependencies:
@@ -7128,7 +7128,7 @@ snapshots:
       de-indent: 1.0.2
       he: 1.2.0
 
-  '@vue/language-core@2.1.10(typescript@5.7.3)':
+  '@vue/language-core@2.1.10(typescript@5.8.3)':
     dependencies:
       '@volar/language-core': 2.4.10
       '@vue/compiler-dom': 3.5.13
@@ -7139,7 +7139,7 @@ snapshots:
       muggle-string: 0.4.1
       path-browserify: 1.0.1
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.3
 
   '@vue/reactivity@3.5.13':
     dependencies:
@@ -7157,11 +7157,11 @@ snapshots:
       '@vue/shared': 3.5.13
       csstype: 3.1.3
 
-  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.7.3))':
+  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
-      vue: 3.5.13(typescript@5.7.3)
+      vue: 3.5.13(typescript@5.8.3)
 
   '@vue/shared@3.5.13': {}
 
@@ -7856,29 +7856,29 @@ snapshots:
 
   electron-to-chromium@1.5.62: {}
 
-  elysia-compress@1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3):
+  elysia-compress@1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3):
     dependencies:
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
-      typescript: 5.7.3
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
+      typescript: 5.8.3
 
-  elysia-connect-middleware@0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)):
+  elysia-connect-middleware@0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)):
     dependencies:
       '@types/connect': 3.4.38
       '@types/express': 4.17.21
       connect: 3.7.0
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
       node-mocks-http: 1.16.1(@types/express@4.17.21)(@types/node@22.18.12)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
 
-  elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3):
+  elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3):
     dependencies:
       '@sinclair/typebox': 0.34.10
       cookie: 1.0.2
       fast-decode-uri-component: 1.0.1
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.3
 
   emittery@0.13.1: {}
 
@@ -10253,7 +10253,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.7.3):
+  svelte-check@4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.8.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
@@ -10261,7 +10261,7 @@ snapshots:
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.2.2
-      typescript: 5.7.3
+      typescript: 5.8.3
     transitivePeerDependencies:
       - picomatch
 
@@ -10661,22 +10661,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-tsc@2.1.10(typescript@5.7.3):
+  vue-tsc@2.1.10(typescript@5.8.3):
     dependencies:
       '@volar/typescript': 2.4.10
-      '@vue/language-core': 2.1.10(typescript@5.7.3)
+      '@vue/language-core': 2.1.10(typescript@5.8.3)
       semver: 7.6.3
-      typescript: 5.7.3
+      typescript: 5.8.3
 
-  vue@3.5.13(typescript@5.7.3):
+  vue@3.5.13(typescript@5.8.3):
     dependencies:
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-sfc': 3.5.13
       '@vue/runtime-dom': 3.5.13
-      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@5.7.3))
+      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@5.8.3))
       '@vue/shared': 3.5.13
     optionalDependencies:
-      typescript: 5.7.3
+      typescript: 5.8.3
 
   walker@1.0.8:
     dependencies:

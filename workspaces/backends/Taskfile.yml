@@ -1,0 +1,7 @@
+version: "3"
+set: [ pipefail ]
+
+includes:
+  nest-no-orm:
+    taskfile: ./nest-no-orm
+    dir: ./nest-no-orm

@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "task.vscode-task",
+    "redhat.vscode-yaml",
+    "EditorConfig.EditorConfig",
+    "ionutvmi.path-autocomplete",
+    "esbenp.prettier-vscode"
+  ],
+  "unwantedRecommendations": [
+    "iulian-radu-at.taskfile-launcher",
+    "paulvarache.vscode-taskfile",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}

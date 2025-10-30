@@ -1,6 +1,0 @@
-FROM cartok1337/nest-no-orm-base:latest
-
-EXPOSE 3000
-RUN pnpm run build
-
-CMD ["node", "dist/main"]

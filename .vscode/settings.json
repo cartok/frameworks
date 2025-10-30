@@ -1,23 +1,50 @@
 {
-  "multiDiffEditor.experimental.enabled": true,
-
-  // Extension: EditorConfig.EditorConfig
-  "files.trimTrailingWhitespace": false,
-  "files.insertFinalNewline": false,
-
-  // Extension: gencer.html-slim-scss-css-class-completion
-  // TODO: fix these `style` object member autocompletions
-  // For solid at least i do not even need this extension at all i guess.
-  // -> Is the extension unable to read then new @rules or @rules in general?
-  "html-css-class-completion.includeGlobPattern": "**/*.{css,tsx}",
-
-  // Extension: Sort Lines
-  "sortLines.filterBlankLines": true,
+  // Basics
+  // -----------------------------------------------------------------------------------------------
+  "search.exclude": {},
+  // "files.exclude": {
+  //   "**/.git": true,
+  //   "**/.svn": true,
+  //   "**/.hg": true,
+  //   "**/.DS_Store": true,
+  //   "**/Thumbs.db": true
+  // },
+  "files.associations": {},
+  "editor.wordBasedSuggestions": "matchingDocuments",
 
   // Allow @scope
   "css.lint.unknownAtRules": "ignore",
 
-  // Code formatting, wrapping, auto-fix and auto-import.
+  // Extensions
+  // -----------------------------------------------------------------------------------------------
+
+  // EXTENSION: EditorConfig.EditorConfig
+  "files.trimTrailingWhitespace": false,
+
+  // EXTENSION: gencer.html-slim-scss-css-class-completion
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,tsx}",
+
+  // EXTENSION: Sort Lines
+  "sortLines.filterBlankLines": true,
+
+  // EXTENSION: ionutvmi.path-autocomplete
+  "path-autocomplete.triggerOutsideStrings": true,
+
+  // EXTENSION: task.vscode-task
+  "yaml.schemaStore.enable": true,
+  "yaml.schemas": {
+    "https://taskfile.dev/schema.json": [
+      "**/Taskfile.yml",
+      "**/*.taskfile.yml",
+      "taskfiles/**/*.yml"
+    ],
+    "http://json-schema.org/draft-07/schema#": ["**/schema.*.yml"]
+  },
+
+  "task": { "outputTo": "terminal" },
+
+  // Formatting & Language specific
+  // -----------------------------------------------------------------------------------------------
   "eslint.useFlatConfig": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.suggest.autoImports": true,
@@ -84,12 +111,5 @@
   "[json]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // Editor performance
-  "files.exclude": {
-    "**/node_modules": true,
-    "**/.next": true,
-    "**/target": true
-  },
+  }
 }

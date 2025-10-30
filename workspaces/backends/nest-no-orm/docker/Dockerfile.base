@@ -1,0 +1,20 @@
+FROM node:24.10.0-alpine3.22
+
+# SYSTEM
+# ------------------------------------------------------------------------------------------------
+
+RUN apk add --no-cache zsh
+
+# APP
+# ------------------------------------------------------------------------------------------------
+
+WORKDIR /usr/src/app
+
+RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
+
+COPY pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
+COPY package.json ./
+COPY ./workspaces/backends/nest-no-orm/package.json ./workspaces/backends/nest-no-orm/
+
+RUN pnpm install

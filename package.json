@@ -6,10 +6,7 @@
     "node": "24.10.0",
     "pnpm": "10.19.0"
   },
-  "devEngines": {
-    "node": "24.10.0",
-    "pnpm": "10.19.0"
-  },
+  "engineStrict": true,
   "devDependencies": {
     "@eslint/js": "~9.14.0",
     "@types/eslint__js": "~8.42.3",

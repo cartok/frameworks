@@ -1,0 +1,68 @@
+version: "3"
+set: [ pipefail ]
+
+vars:
+  REGISTRY_USER: cartok1337
+  SERVICE_NAME: nest-no-orm
+
+  # The context is the monorepo root
+  CONTEXT_PATH: ../../../
+
+  DOCKER_BUILD_FLAGS: '{{.DOCKER_BUILD_FLAGS | default ""}}'
+
+  # Image tags - Renamed for clarity
+  BASE_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}-base:latest'
+  CODE_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}-code:latest'
+  PROD_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}:latest'
+
+tasks:
+  # --- Build Tasks ---
+
+  docker-build:base:
+    cmds:
+      - docker build -t {{.BASE_IMAGE}} -f docker/Dockerfile.base {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
+
+  docker-build:base:no-cache:
+    cmds:
+      - task: docker-build:base
+        vars: { DOCKER_BUILD_FLAGS: --no-cache }
+
+  docker-build:code:
+    deps: [docker-build:base]
+    cmds:
+      - docker build -t {{.CODE_IMAGE}} -f docker/Dockerfile.code {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
+
+  docker-build:code:no-cache:
+    cmds:
+      - task: docker-build:code
+        vars: { DOCKER_BUILD_FLAGS: --no-cache }
+
+  docker-build:prod:
+    deps: [docker-build:code]
+    cmds:
+      - docker build -t {{.PROD_IMAGE}} -f docker/Dockerfile.prod {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
+
+  docker-build:
+    cmds:
+      - task: docker-build:prod
+
+  # --- Publish Tasks ---
+
+  docker-publish:
+    deps: [docker-build]
+    cmds:
+      - docker push {{.BASE_IMAGE}}
+      - docker push {{.CODE_IMAGE}}
+      - docker push {{.PROD_IMAGE}}
+
+  # --- Development Tasks ---
+
+  dev:
+    cmds:
+      - |
+        docker compose \
+        -f docker/docker-compose.yml \
+        -f docker/docker-compose.dev.yml \
+        up \
+        --build \
+        --remove-orphans

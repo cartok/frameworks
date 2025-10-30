@@ -1,23 +1,8 @@
 ## Development
 
-### Build
+### Build / Start / Develop
 
-```
-# From monorepo root directory
-# Build public base image
-docker build --no-cache -t cartok1337/nest-no-orm-base -f ./workspaces/backends/nest-no-orm/Dockerfile.base ./ \
-  && docker push cartok1337/nest-no-orm-base:latest
-
-# Build private production image
-docker build --no-cache -t cartok1337/nest-no-orm -f ./workspaces/backends/nest-no-orm/Dockerfile.prod ./ \
-  && docker push cartok1337/nest-no-orm
-```
-
-### Start / Develop
-
-```
-docker compose -f ./workspaces/backends/nest-no-orm/docker-compose.yml -f ./workspaces/backends/nest-no-orm/docker-compose.dev.yml up --build --remove-orphans
-```
+Use the Taskfile tasks.
 
 #### Test if API is running
 

@@ -1,0 +1,7 @@
+version: "3"
+set: [ pipefail ]
+
+includes:
+  backends:
+    taskfile: ./workspaces/backends
+    dir: ./workspaces/backends

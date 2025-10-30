@@ -1,7 +1,9 @@
 services:
   api:
-    build: .
     container_name: nest-no-orm-api
+    build:
+      context: ../../../../
+      dockerfile: ./workspaces/backends/nest-no-orm/Dockerfile.dev
     ports:
       - "3000:3000"
     environment:
