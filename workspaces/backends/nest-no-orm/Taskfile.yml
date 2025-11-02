@@ -56,13 +56,22 @@ tasks:
       - docker push {{.PROD_IMAGE}}
 
   # --- Development Tasks ---
-
   dev:
+    desc: Starts dependent services (like the DB) in Docker for local API development.
+    cmds:
+      - docker compose up -d
+      - pnpm run start:dev
+
+  dev-full:
+    # TODO: Permission management is complicated when trying to get API running in docker.
+    # Needs further work.
+    desc: Starts the full stack, including the API, inside Docker containers.
     cmds:
       - |
         docker compose \
-        -f docker/docker-compose.yml \
-        -f docker/docker-compose.dev.yml \
+        -f compose.yml \
+        -f compose.dev.yml \
+        --profile full \
         up \
         --build \
-        --remove-orphans
+        --watch

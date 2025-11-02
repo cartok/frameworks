@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: nest-no-orm-api-prod
+    build:
+      dockerfile: ./workspaces/backends/nest-no-orm/Dockerfile.prod
+
+  db:
+    container_name: nest-no-orm-db-prod
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres

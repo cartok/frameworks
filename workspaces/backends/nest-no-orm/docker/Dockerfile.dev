@@ -1,3 +1,5 @@
-FROM cartok1337/nest-no-orm-code:latest
+FROM cartok1337/nest-no-orm-base:latest
 
-EXPOSE 3000
+EXPOSE ${API_PORT}
+
+ENTRYPOINT [ "/usr/src/app/workspaces/backends/nest-no-orm/docker/entrypoint-api.dev.sh" ]

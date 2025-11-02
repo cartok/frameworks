@@ -53,9 +53,15 @@ importers:
 
   workspaces/backends/nest-no-orm:
     dependencies:
+      '@cartok/todo-list-types':
+        specifier: workspace:*
+        version: link:../../types
       '@nestjs/common':
         specifier: ^11.0.1
         version: 11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.2
+        version: 4.0.2(@nestjs/common@11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
       '@nestjs/core':
         specifier: ^11.0.1
         version: 11.1.8(@nestjs/common@11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.8)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -65,6 +71,9 @@ importers:
       '@nestjs/platform-fastify':
         specifier: ^11.1.8
         version: 11.1.8(@nestjs/common@11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.8)
+      joi:
+        specifier: ^18.0.1
+        version: 18.0.1
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -93,6 +102,9 @@ importers:
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/node':
         specifier: ^22.10.7
         version: 22.18.12
@@ -165,10 +177,10 @@ importers:
         version: link:../../../types
       '@elysiajs/html':
         specifier: ^1.1.1
-        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)
+        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)
       '@elysiajs/static':
         specifier: ^1.1.1
-        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))
+        version: 1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))
       '@reduxjs/toolkit':
         specifier: ^2.4.0
         version: 2.4.0(react-redux@9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -180,13 +192,13 @@ importers:
         version: 7.1.3
       elysia:
         specifier: ^1.1.25
-        version: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
+        version: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
       elysia-compress:
         specifier: ^1.2.1
-        version: 1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)
+        version: 1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)
       elysia-connect-middleware:
         specifier: ^0.0.3
-        version: 0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))
+        version: 0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))
       immer:
         specifier: ^10.1.1
         version: 10.1.1
@@ -255,7 +267,7 @@ importers:
         version: 5.2.2
       svelte-check:
         specifier: ^4.0.5
-        version: 4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.8.3)
+        version: 4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.7.3)
       tslib:
         specifier: ^2.8.0
         version: 2.8.1
@@ -273,17 +285,17 @@ importers:
         version: link:../../../types
       vue:
         specifier: ^3.5.12
-        version: 3.5.13(typescript@5.8.3)
+        version: 3.5.13(typescript@5.7.3)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
-        version: 5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.8.3))
+        version: 5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.7.3))
       vite:
         specifier: ~6.0.2
         version: 6.0.2(@types/node@22.18.12)(terser@5.44.0)
       vue-tsc:
         specifier: ^2.1.8
-        version: 2.1.10(typescript@5.8.3)
+        version: 2.1.10(typescript@5.7.3)
 
   workspaces/packages/todo-list-styles: {}
 
@@ -975,6 +987,26 @@ packages:
   '@fastify/proxy-addr@5.1.0':
     resolution: {integrity: sha512-INS+6gh91cLUjB+PVHfu1UqcB76Sqtpyp7bnL+FYojhjygvOPA9ctiD/JDKsyD9Xgu4hUhCSJBPig/w7duNajw==}
 
+  '@hapi/address@5.1.1':
+    resolution: {integrity: sha512-A+po2d/dVoY7cYajycYI43ZbYMXukuopIsqCjh5QzsBCipDtdofHntljDlpccMjIfTy6UOkg+5KPriwYch2bXA==}
+    engines: {node: '>=14.0.0'}
+
+  '@hapi/formula@3.0.2':
+    resolution: {integrity: sha512-hY5YPNXzw1He7s0iqkRQi+uMGh383CGdyyIGYtB+W5N3KHPXoqychklvHhKCC9M3Xtv0OCs/IHw+r4dcHtBYWw==}
+
+  '@hapi/hoek@11.0.7':
+    resolution: {integrity: sha512-HV5undWkKzcB4RZUusqOpcgxOaq6VOAH7zhhIr2g3G8NF/MlFO75SjOr2NfuSx0Mh40+1FqCkagKLJRykUWoFQ==}
+
+  '@hapi/pinpoint@2.0.1':
+    resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
+
+  '@hapi/tlds@1.1.4':
+    resolution: {integrity: sha512-Fq+20dxsxLaUn5jSSWrdtSRcIUba2JquuorF9UW1wIJS5cSUwxIsO2GIhaWynPRflvxSzFN+gxKte2HEW1OuoA==}
+    engines: {node: '>=14.0.0'}
+
+  '@hapi/topo@6.0.2':
+    resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1327,6 +1359,12 @@ packages:
       class-validator:
         optional: true
 
+  '@nestjs/config@4.0.2':
+    resolution: {integrity: sha512-McMW6EXtpc8+CwTUwFdg6h7dYcBUpH5iUILCclAsa+MbCEvC9ZKu4dCHRlJqALuhjLw97pbQu62l4+wRwGeZqA==}
+    peerDependencies:
+      '@nestjs/common': ^10.0.0 || ^11.0.0
+      rxjs: ^7.1.0
+
   '@nestjs/core@11.1.8':
     resolution: {integrity: sha512-7riWfmTmMhCJHZ5ZiaG+crj4t85IPCq/wLRuOUSigBYyFT2JZj0lVHtAdf4Davp9ouNI8GINBDt9h9b5Gz9nTw==}
     engines: {node: '>= 20'}
@@ -1567,6 +1605,9 @@ packages:
   '@sinonjs/fake-timers@13.0.5':
     resolution: {integrity: sha512-36/hTbH2uaWuGVERyC6da9YwGWnzUZXuPro/F2LfsdOsLnCojz/iSH8MxUt/FD2S5XBSVPhmArFUXcpCQ2Hkiw==}
 
+  '@standard-schema/spec@1.0.0':
+    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
+
   '@sveltejs/vite-plugin-svelte-inspector@3.0.1':
     resolution: {integrity: sha512-2CKypmj1sM4GE7HjllT7UKmo4Q6L5xFRd7VMGEWhYnZ+wc6AUVU01IBd7yUi6WnFndEwWoMNOd6e8UjoN0nbvQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
@@ -1747,6 +1788,9 @@ packages:
 
   '@types/jest@30.0.0':
     resolution: {integrity: sha512-XTYugzhuwqWjws0CVz8QpM36+T+Dz5mTEBKhNs/esGLnCIlGdRy+Dq78NRjd7ls7r8BC8ZRMOrKlkO1hU0JOwA==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -2720,6 +2764,14 @@ packages:
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
+
+  dotenv-expand@12.0.1:
+    resolution: {integrity: sha512-LaKRbou8gt0RNID/9RoI+J2rvXsBRPMV7p+ElHlPhcSARbCPDYcYG2s1TIzAfWv4YSgyY5taidWzzs31lNV3yQ==}
+    engines: {node: '>=12'}
+
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -3706,6 +3758,10 @@ packages:
     peerDependenciesMeta:
       node-notifier:
         optional: true
+
+  joi@18.0.1:
+    resolution: {integrity: sha512-IiQpRyypSnLisQf3PwuN2eIHAsAIGZIrLZkd4zdvIar2bDyhM91ubRjy8a3eYablXsh9BeI/c7dmPYHca5qtoA==}
+    engines: {node: '>= 20'}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -5611,17 +5667,17 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@elysiajs/html@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3)':
+  '@elysiajs/html@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3)':
     dependencies:
       '@kitajs/html': 4.2.4
-      '@kitajs/ts-html-plugin': 4.1.0(@kitajs/html@4.2.4)(typescript@5.8.3)
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
+      '@kitajs/ts-html-plugin': 4.1.0(@kitajs/html@4.2.4)(typescript@5.7.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
     transitivePeerDependencies:
       - typescript
 
-  '@elysiajs/static@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))':
+  '@elysiajs/static@1.1.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))':
     dependencies:
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
       node-cache: 5.1.2
 
   '@emnapi/core@1.6.0':
@@ -5903,6 +5959,22 @@ snapshots:
     dependencies:
       '@fastify/forwarded': 3.0.1
       ipaddr.js: 2.2.0
+
+  '@hapi/address@5.1.1':
+    dependencies:
+      '@hapi/hoek': 11.0.7
+
+  '@hapi/formula@3.0.2': {}
+
+  '@hapi/hoek@11.0.7': {}
+
+  '@hapi/pinpoint@2.0.1': {}
+
+  '@hapi/tlds@1.1.4': {}
+
+  '@hapi/topo@6.0.2':
+    dependencies:
+      '@hapi/hoek': 11.0.7
 
   '@humanfs/core@0.19.1': {}
 
@@ -6309,12 +6381,12 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@kitajs/ts-html-plugin@4.1.0(@kitajs/html@4.2.4)(typescript@5.8.3)':
+  '@kitajs/ts-html-plugin@4.1.0(@kitajs/html@4.2.4)(typescript@5.7.3)':
     dependencies:
       '@kitajs/html': 4.2.4
       chalk: 4.1.2
       tslib: 2.8.1
-      typescript: 5.8.3
+      typescript: 5.7.3
       yargs: 17.7.2
 
   '@lit-labs/ssr-dom-shim@1.2.1': {}
@@ -6372,6 +6444,14 @@ snapshots:
       uid: 2.0.2
     transitivePeerDependencies:
       - supports-color
+
+  '@nestjs/config@4.0.2(@nestjs/common@11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)':
+    dependencies:
+      '@nestjs/common': 11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      dotenv: 16.4.7
+      dotenv-expand: 12.0.1
+      lodash: 4.17.21
+      rxjs: 7.8.2
 
   '@nestjs/core@11.1.8(@nestjs/common@11.1.8(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.8)(reflect-metadata@0.2.2)(rxjs@7.8.2)':
     dependencies:
@@ -6569,6 +6649,8 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
+  '@standard-schema/spec@1.0.0': {}
+
   '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.2)(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0)))(svelte@5.2.2)(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.2)(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))
@@ -6765,6 +6847,8 @@ snapshots:
     dependencies:
       expect: 30.2.0
       pretty-format: 30.2.0
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -7076,10 +7160,10 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-vue@5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.8.3))':
+  '@vitejs/plugin-vue@5.2.0(vite@6.0.2(@types/node@22.18.12)(terser@5.44.0))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       vite: 6.0.2(@types/node@22.18.12)(terser@5.44.0)
-      vue: 3.5.13(typescript@5.8.3)
+      vue: 3.5.13(typescript@5.7.3)
 
   '@volar/language-core@2.4.10':
     dependencies:
@@ -7128,7 +7212,7 @@ snapshots:
       de-indent: 1.0.2
       he: 1.2.0
 
-  '@vue/language-core@2.1.10(typescript@5.8.3)':
+  '@vue/language-core@2.1.10(typescript@5.7.3)':
     dependencies:
       '@volar/language-core': 2.4.10
       '@vue/compiler-dom': 3.5.13
@@ -7139,7 +7223,7 @@ snapshots:
       muggle-string: 0.4.1
       path-browserify: 1.0.1
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.7.3
 
   '@vue/reactivity@3.5.13':
     dependencies:
@@ -7157,11 +7241,11 @@ snapshots:
       '@vue/shared': 3.5.13
       csstype: 3.1.3
 
-  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.8.3))':
+  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
-      vue: 3.5.13(typescript@5.8.3)
+      vue: 3.5.13(typescript@5.7.3)
 
   '@vue/shared@3.5.13': {}
 
@@ -7844,6 +7928,12 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
+  dotenv-expand@12.0.1:
+    dependencies:
+      dotenv: 16.4.7
+
+  dotenv@16.4.7: {}
+
   dunder-proto@1.0.1:
     dependencies:
       call-bind-apply-helpers: 1.0.2
@@ -7856,29 +7946,29 @@ snapshots:
 
   electron-to-chromium@1.5.62: {}
 
-  elysia-compress@1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3))(typescript@5.8.3):
+  elysia-compress@1.2.1(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3))(typescript@5.7.3):
     dependencies:
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
-      typescript: 5.8.3
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
+      typescript: 5.7.3
 
-  elysia-connect-middleware@0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)):
+  elysia-connect-middleware@0.0.3(@types/node@22.18.12)(elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)):
     dependencies:
       '@types/connect': 3.4.38
       '@types/express': 4.17.21
       connect: 3.7.0
-      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3)
+      elysia: 1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3)
       node-mocks-http: 1.16.1(@types/express@4.17.21)(@types/node@22.18.12)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
 
-  elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.8.3):
+  elysia@1.1.25(@sinclair/typebox@0.34.10)(typescript@5.7.3):
     dependencies:
       '@sinclair/typebox': 0.34.10
       cookie: 1.0.2
       fast-decode-uri-component: 1.0.1
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.7.3
 
   emittery@0.13.1: {}
 
@@ -9255,6 +9345,16 @@ snapshots:
       - supports-color
       - ts-node
 
+  joi@18.0.1:
+    dependencies:
+      '@hapi/address': 5.1.1
+      '@hapi/formula': 3.0.2
+      '@hapi/hoek': 11.0.7
+      '@hapi/pinpoint': 2.0.1
+      '@hapi/tlds': 1.1.4
+      '@hapi/topo': 6.0.2
+      '@standard-schema/spec': 1.0.0
+
   js-tokens@4.0.0: {}
 
   js-yaml@3.14.1:
@@ -10253,7 +10353,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.8.3):
+  svelte-check@4.0.9(picomatch@4.0.3)(svelte@5.2.2)(typescript@5.7.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
@@ -10261,7 +10361,7 @@ snapshots:
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.2.2
-      typescript: 5.8.3
+      typescript: 5.7.3
     transitivePeerDependencies:
       - picomatch
 
@@ -10661,22 +10761,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-tsc@2.1.10(typescript@5.8.3):
+  vue-tsc@2.1.10(typescript@5.7.3):
     dependencies:
       '@volar/typescript': 2.4.10
-      '@vue/language-core': 2.1.10(typescript@5.8.3)
+      '@vue/language-core': 2.1.10(typescript@5.7.3)
       semver: 7.6.3
-      typescript: 5.8.3
+      typescript: 5.7.3
 
-  vue@3.5.13(typescript@5.8.3):
+  vue@3.5.13(typescript@5.7.3):
     dependencies:
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-sfc': 3.5.13
       '@vue/runtime-dom': 3.5.13
-      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@5.8.3))
+      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@5.7.3))
       '@vue/shared': 3.5.13
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.7.3
 
   walker@1.0.8:
     dependencies:

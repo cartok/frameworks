@@ -1,16 +1,17 @@
 FROM node:24.10.0-alpine3.22
 
-# SYSTEM
-# ------------------------------------------------------------------------------------------------
-
 RUN apk add --no-cache zsh
+RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
 
-# APP
-# ------------------------------------------------------------------------------------------------
-
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
+# TODO: Permission management is complicated when trying to get API running in docker.
+# Needs further work.
+# # The `node` user (UID 1000) is inherited from the base image.
+# RUN chown -R node:node /usr/src/app
+# # Switch to node user.
+# USER node
 
 COPY pnpm-lock.yaml ./
 COPY pnpm-workspace.yaml ./

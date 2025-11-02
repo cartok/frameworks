@@ -1,8 +1,15 @@
 ## Development
 
-### Build / Start / Develop
+### Start / Develop
 
-Use the Taskfile tasks.
+1. Copy templates
+
+   ```shell
+   cp .env.template .env
+   cp compose.override.yml.template compose.override.yml
+   ```
+
+1. Run either `docker compose up` to start all dependencies and run the NodeJS API locally via `pnpm start:dev` or use the Taskfile task `dev`. To also have the API running in docker some more configuration work has to be done but I feel like it's better like this anyways.
 
 #### Test if API is running
 
@@ -20,6 +27,19 @@ docker exec -it -u postgres nest-no-orm-db-dev sh
 psql
 # \h for help
 # \q to exit
+```
+
+#### Build
+
+```
+# From monorepo root directory
+# Build public base image
+docker build --no-cache -t cartok1337/nest-no-orm-base -f ./workspaces/backends/nest-no-orm/Dockerfile.base ./ \
+  && docker push cartok1337/nest-no-orm-base:latest
+
+# Build private production image
+docker build --no-cache -t cartok1337/nest-no-orm -f ./workspaces/backends/nest-no-orm/Dockerfile.prod ./ \
+  && docker push cartok1337/nest-no-orm
 ```
 
 # NestJS

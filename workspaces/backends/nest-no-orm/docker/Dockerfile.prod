@@ -1,7 +1,8 @@
 FROM cartok1337/nest-no-orm-code:latest
 
-EXPOSE 3000
+EXPOSE ${API_PORT}
 
 RUN pnpm run build
 
+USER node
 CMD ["node", "./dist/main"]

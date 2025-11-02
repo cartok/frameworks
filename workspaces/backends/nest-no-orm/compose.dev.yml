@@ -1,0 +1,28 @@
+# Only needed if you want to have the REST API also run inside of Docker.
+
+services:
+  api:
+    container_name: nest-no-orm-api-dev
+    build:
+      context: ../../../
+      dockerfile: workspaces/backends/nest-no-orm/docker/Dockerfile.dev
+    volumes:
+      - ../../../:/usr/src/app
+      # Isolate the container's node_modules and pnpm store from the host.
+      - /usr/src/app/node_modules
+      - /usr/src/app/.pnpm-store
+      - /usr/src/app/workspaces/backends/nest-no-orm/node_modules
+      - /usr/src/app/workspaces/backends/nest-no-orm/.pnpm-store
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: docker/Dockerfile.dev
+          action: rebuild
+        - path: docker/Dockerfile.base
+          action: rebuild
+        - path: docker/entrypoint-api.dev.sh
+          action: rebuild
+
+  db:
+    container_name: nest-no-orm-db-dev

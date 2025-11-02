@@ -1,0 +1,26 @@
+services:
+  api:
+    container_name: nest-no-orm-api
+    profiles: ["full"]
+    user: "${UID:-1000}:${GID:-1000}"
+    build:
+      context: ../../../
+      dockerfile: ./workspaces/backends/nest-no-orm/Dockerfile.prod
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    depends_on:
+      - db
+
+  db:
+    container_name: nest-no-orm-db
+    image: postgres:18.0-alpine3.22
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_DATABASE}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
