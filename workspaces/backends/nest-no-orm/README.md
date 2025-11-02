@@ -31,16 +31,7 @@ psql
 
 #### Build
 
-```
-# From monorepo root directory
-# Build public base image
-docker build --no-cache -t cartok1337/nest-no-orm-base -f ./workspaces/backends/nest-no-orm/Dockerfile.base ./ \
-  && docker push cartok1337/nest-no-orm-base:latest
-
-# Build private production image
-docker build --no-cache -t cartok1337/nest-no-orm -f ./workspaces/backends/nest-no-orm/Dockerfile.prod ./ \
-  && docker push cartok1337/nest-no-orm
-```
+Build scripts are in the [Taskfile.yml](./Taskfile.yml)
 
 # NestJS
 
