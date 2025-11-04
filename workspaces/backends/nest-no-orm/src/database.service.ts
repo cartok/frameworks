@@ -1,15 +1,20 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { Pool } from 'pg';
 import type { Env } from '~/env.model';
 
 @Injectable()
 export class DatabaseService {
+  private readonly pool = new Pool();
+
   constructor(@Inject('env') private readonly env: Env) {
     console.log({ env });
-    const pool = new Pool()
+    // TODO: Need entirely better structure.
+    this.pool.connect();
   }
 
-  query<T>(query: string): T {
+  async query(query: string) {
     console.log(query);
-    return {} as T;
+    const result = await this.pool.query(query);
+    return result.rows;
   }
 }
