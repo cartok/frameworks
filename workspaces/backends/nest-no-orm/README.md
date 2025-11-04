@@ -35,8 +35,6 @@ Build scripts are in the [Taskfile.yml](./Taskfile.yml)
 
 ## Development
 
-The standard NestJS _README.md_ is below this section.
-
 ### Monorepo context
 
 To run commands from root of monorepo use `--filter` option of `pnpm`, for example:
@@ -45,7 +43,35 @@ To run commands from root of monorepo use `--filter` option of `pnpm`, for examp
 pnpm --filter framework-tests-backend-nest-no-orm lint
 ```
 
+## Rough TODOs
+
+### Stage 1
+
+- Create database tables
+- Finish database service
+- Add database migrations with help of knex
+- Add controllers / routes to make CRUD operations accessible
+
+### Stage 2
+
+- Add CI/CD via Github Actions ...
+- Add Git hooks via python pre-commit
+
+### Stage 3
+
+- Integrate the backend into one of the frontends
+
+### Stage 4
+
+- Implement the rest of the backends
+
+### Stage 5
+
+- Features
+
 ---
+
+# NestJS
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
