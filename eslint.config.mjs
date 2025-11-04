@@ -19,6 +19,15 @@ export default typescriptEslint.config(
 
   /* Global */
   {
+    ignores: ["eslint.config.mjs"],
+    languageOptions: {
+      parserOptions: {
+        sourceType: "module",
+        projectService: true,
+      },
+    },
+  },
+  {
     files: ["**/*.{mjs,ts,tsx}"],
     ignores: ["eslint.config.mjs"],
     rules: {
@@ -28,6 +37,7 @@ export default typescriptEslint.config(
 
       /* Typescript rules */
       "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-empty-function": "warn",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": [
         "error",
@@ -50,7 +60,39 @@ export default typescriptEslint.config(
     },
   },
 
-  /* App Scope */
+  /* Backends Scope */
+  {
+    files: ["workspaces/backends/**/*"],
+    languageOptions: {
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
+    rules: {
+      // TODO: Make this rule global. Therefore update the frontends.
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["./*", "../*", "*/./*", "*/../*"],
+              message: "Relative parent imports are not allowed.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ["workspaces/backends/nest-*/**/*"],
+    rules: {
+      "@typescript-eslint/no-extraneous-class": "off",
+    },
+  },
+
+  /* Frontends Scope */
   {
     files: ["workspaces/frontends/**/*"],
     languageOptions: {
