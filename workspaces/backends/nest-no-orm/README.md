@@ -1,6 +1,6 @@
 ## Development
 
-### Start / Develop
+### Start / Developmode
 
 1. Copy templates
 
@@ -9,12 +9,12 @@
    cp compose.override.yml.template compose.override.yml
    ```
 
-1. Run either `docker compose up` to start all dependencies and run the NodeJS API locally via `pnpm start:dev` or use the Taskfile task `dev`. To also have the API running in docker some more configuration work has to be done but I feel like it's better like this anyways.
+1. Run either `docker compose up` to start all dependencies and run the NodeJS API locally via `pnpm start:dev` **OR** use the Taskfile task `dev` _(WIP)_ to start everything inside of a docker network.
 
 #### Test if API is running
 
 ```
-curl localhost:3000
+curl localhost:3000/api
 ```
 
 #### Access database cli
@@ -33,9 +33,13 @@ psql
 
 Build scripts are in the [Taskfile.yml](./Taskfile.yml)
 
-# NestJS
+## Development
 
-Original documentation is separated below. To run commands from root of monorepo use `--filter` option of `pnpm`, for example:
+The standard NestJS _README.md_ is below this section.
+
+### Monorepo context
+
+To run commands from root of monorepo use `--filter` option of `pnpm`, for example:
 
 ```
 pnpm --filter framework-tests-backend-nest-no-orm lint
