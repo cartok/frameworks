@@ -9,7 +9,7 @@
    cp compose.override.yml.template compose.override.yml
    ```
 
-1. Run either `docker compose up` to start all dependencies and run the NodeJS API locally via `pnpm start:dev` **OR** use the Taskfile task `dev` _(WIP)_ to start everything inside of a docker network.
+1. Run either `docker compose up` to start all dependencies and run the NodeJS API locally via `pnpm start:dev` or simply use the Taskfile task `dev`. To start everything inside of Docker use the Taskfile task `dev-full` (WIP).
 
 #### Test if API is running
 
