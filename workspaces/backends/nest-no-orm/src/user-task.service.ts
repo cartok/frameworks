@@ -9,35 +9,49 @@ export class UserTaskService implements RepositoryModel<UserTask> {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async get(id: string) {
-    const queryText = `SELECT * FROM UserTasks WHERE id=${id};`;
-    const response = await this.databaseService.query(queryText);
-    return plainToInstance(UserTask, response[0]);
+    const queryText = `SELECT * FROM user_tasks WHERE id=$1`;
+    const response = await this.databaseService.query(queryText, [id]);
+
+    return plainToInstance(UserTask, response.rows[0]);
   }
 
-  async add() {
-    await this.databaseService.query(`
-    `);
+  async add(task: UserTask) {
+    const queryText = `INSERT INTO user_tasks (text) $1 RETURNING *`;
+    const response = await this.databaseService.query(queryText, [task.text]);
+
+    return plainToInstance(UserTask, response.rows[0]);
   }
 
-  async delete() {
-    await this.databaseService.query(`
-    `);
+  async delete(id: string) {
+    const queryText = `DELETE FROM user_tasks WHERE id=$1`;
+    const response = await this.databaseService.query(queryText, [id]);
+
+    if (response.rowCount === 0) {
+      throw new Error(`Task with id ${id} not found`);
+    }
+
+    return plainToInstance(UserTask, response.rows[0]);
   }
 
-  async update() {
-    await this.databaseService.query(`
-    `);
+  async update(task: UserTask) {
+    const queryText = `
+      UPDATE posts
+      SET text = $2
+      WHERE id = $1
+      RETURNING *
+    `;
+    const response = await this.databaseService.query(queryText, [
+      task.id,
+      task.text,
+    ]);
+
+    return plainToInstance(UserTask, response.rows[0]);
   }
 
   async getAll() {
-    const response = await this.databaseService.query(`
-      SELECT * FROM user-task;
-    `);
-    return plainToInstance(UserTask, response);
-  }
+    const queryText = `SELECT * FROM user_tasks`;
+    const response = await this.databaseService.query(queryText);
 
-  async clear() {
-    await this.databaseService.query(`
-    `);
+    return response.rows.map((row) => plainToInstance(UserTask, row));
   }
 }

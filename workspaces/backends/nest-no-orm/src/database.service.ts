@@ -12,9 +12,8 @@ export class DatabaseService {
     this.pool.connect();
   }
 
-  async query(query: string) {
-    console.log(query);
-    const result = await this.pool.query(query);
-    return result.rows;
+  async query(query: string, values?: unknown[]) {
+    const result = await this.pool.query(query, values);
+    return result;
   }
 }
