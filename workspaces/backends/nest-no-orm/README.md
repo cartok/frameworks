@@ -47,10 +47,9 @@ pnpm --filter framework-tests-backend-nest-no-orm lint
 
 ### Stage 1
 
-- Create database tables
 - Finish database service
-- Add database migrations with help of knex
-- Add controllers / routes to make CRUD operations accessible
+   - Create database tables
+   - Add routes
 
 ### Stage 2
 
