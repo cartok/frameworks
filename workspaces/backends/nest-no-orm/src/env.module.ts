@@ -3,16 +3,19 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import Joi from 'joi';
 import type { Env } from '~/env.model';
 
+export const INJECTION_KEY_ENV = 'ENV';
+
 @Global()
 @Module({
   providers: [
     {
-      provide: 'env',
+      provide: INJECTION_KEY_ENV,
       inject: [ConfigService],
       useFactory: (configService: ConfigService<Env, true>): Env => {
         return {
           NODE_ENV: configService.get('NODE_ENV', { infer: true }),
           API_PORT: configService.get('API_PORT', { infer: true }),
+          DATABASE_HOST: configService.get('DATABASE_HOST', { infer: true }),
           DATABASE_PORT: configService.get('DATABASE_PORT', { infer: true }),
           DATABASE_USER: configService.get('DATABASE_USER', { infer: true }),
           DATABASE_PASSWORD: configService.get('DATABASE_PASSWORD', {
@@ -34,6 +37,7 @@ import type { Env } from '~/env.model';
           .valid('development', 'production', 'test')
           .required(),
         API_PORT: Joi.number().default(process.env.API_PORT ?? 3000),
+        DATABASE_HOST: Joi.string().required(),
         DATABASE_PORT: Joi.number().required(),
         DATABASE_USER: Joi.string().required(),
         DATABASE_PASSWORD: Joi.string().required(),

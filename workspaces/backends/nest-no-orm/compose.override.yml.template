@@ -1,3 +1,5 @@
 services:
   db:
     container_name: nest-no-orm-db-dev
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
