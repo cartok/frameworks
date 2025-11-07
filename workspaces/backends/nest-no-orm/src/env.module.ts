@@ -1,9 +1,9 @@
-import { Global, Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import Joi from 'joi';
-import type { Env } from '~/env.model';
+import { Global, Module } from "@nestjs/common";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import Joi from "joi";
+import { Env } from "~/env.model";
 
-export const INJECTION_KEY_ENV = 'ENV';
+export const INJECTION_KEY_ENV = Symbol("ENV");
 
 @Global()
 @Module({
@@ -13,15 +13,15 @@ export const INJECTION_KEY_ENV = 'ENV';
       inject: [ConfigService],
       useFactory: (configService: ConfigService<Env, true>): Env => {
         return {
-          NODE_ENV: configService.get('NODE_ENV', { infer: true }),
-          API_PORT: configService.get('API_PORT', { infer: true }),
-          DATABASE_HOST: configService.get('DATABASE_HOST', { infer: true }),
-          DATABASE_PORT: configService.get('DATABASE_PORT', { infer: true }),
-          DATABASE_USER: configService.get('DATABASE_USER', { infer: true }),
-          DATABASE_PASSWORD: configService.get('DATABASE_PASSWORD', {
+          NODE_ENV: configService.get("NODE_ENV", { infer: true }),
+          API_PORT: configService.get("API_PORT", { infer: true }),
+          DATABASE_HOST: configService.get("DATABASE_HOST", { infer: true }),
+          DATABASE_PORT: configService.get("DATABASE_PORT", { infer: true }),
+          DATABASE_USER: configService.get("DATABASE_USER", { infer: true }),
+          DATABASE_PASSWORD: configService.get("DATABASE_PASSWORD", {
             infer: true,
           }),
-          DATABASE_DATABASE: configService.get('DATABASE_DATABASE', {
+          DATABASE_DATABASE: configService.get("DATABASE_DATABASE", {
             infer: true,
           }),
         };
@@ -31,10 +31,10 @@ export const INJECTION_KEY_ENV = 'ENV';
   imports: [
     ConfigModule.forRoot({
       cache: true,
-      envFilePath: ['.env.development.local', '.env.development', '.env'],
+      envFilePath: [".env.development.local", ".env.development", ".env"],
       validationSchema: Joi.object<Env, true, Env>({
         NODE_ENV: Joi.string()
-          .valid('development', 'production', 'test')
+          .valid("development", "production", "test")
           .required(),
         API_PORT: Joi.number().default(process.env.API_PORT ?? 3000),
         DATABASE_HOST: Joi.string().required(),
@@ -49,5 +49,6 @@ export const INJECTION_KEY_ENV = 'ENV';
       },
     }),
   ],
+  exports: [INJECTION_KEY_ENV],
 })
 export class EnvModule {}

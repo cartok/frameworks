@@ -70,6 +70,7 @@ export default typescriptEslint.config(
         ...globals.jest,
       },
     },
+    // TODO: Forbid type-only imports for dependency injection context.
     rules: {
       // TODO: Make this rule global. Therefore update the frontends.
       "no-restricted-imports": [

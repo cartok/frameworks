@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { Pool } from "pg";
-import { INJECTION_KEY_DATABASE_POOL } from "~/database.module";
+import { INJECTION_KEY_DATABASE_POOL } from "~/database-pool.module";
 
 @Injectable()
 export class DatabaseService {
@@ -10,7 +10,6 @@ export class DatabaseService {
 
   async query(query: string, values?: unknown[]) {
     const result = await this.pool.query(query, values);
-
     return result;
   }
 }

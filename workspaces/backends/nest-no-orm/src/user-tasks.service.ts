@@ -1,11 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import { plainToInstance } from 'class-transformer';
-import type { DatabaseService } from '~/database.service';
-import type { RepositoryModel } from '~/repository.model';
-import { UserTask } from '~/user-task.entity';
+import { Injectable } from "@nestjs/common";
+import { plainToInstance } from "class-transformer";
+import { DatabaseService } from "~/database.service";
+import { RepositoryModel } from "~/repository.model";
+import { UserTask } from "~/user-tasks.entity";
 
 @Injectable()
-export class UserTaskService implements RepositoryModel<UserTask> {
+export class UserTasksService implements RepositoryModel<UserTask> {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async get(id: string) {
