@@ -1,7 +1,7 @@
 import { Global, Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import Joi from "joi";
-import { Env } from "~/env.model";
+import { Env } from "~/env/env.model";
 
 export const INJECTION_KEY_ENV = Symbol("ENV");
 

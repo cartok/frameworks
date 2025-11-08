@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { Pool } from "pg";
-import type { Env } from "~/env.model";
-import { INJECTION_KEY_ENV } from "~/env.module";
+import { Env } from "~/env/env.model";
+import { INJECTION_KEY_ENV } from "~/env/env.module";
 
 export const INJECTION_KEY_DATABASE_POOL = Symbol("DATABASE_POOL");
 

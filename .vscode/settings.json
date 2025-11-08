@@ -48,10 +48,11 @@
   "eslint.useFlatConfig": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.suggest.autoImports": true,
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  // Disabled for NestJS
+  // "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
   "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",

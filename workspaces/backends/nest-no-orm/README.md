@@ -25,8 +25,11 @@ Ensure docker compose is up and the run those commands to access the databse:
 ```
 docker exec -it -u postgres nest-no-orm-db-dev sh
 psql
-# \h for help
-# \q to exit
+# help
+# \l
+# \dn
+# \dt
+# \?
 ```
 
 #### Build

@@ -1,5 +1,5 @@
 import { Controller, Get } from "@nestjs/common";
-import { UserTasksService } from "~/user-tasks.service";
+import { UserTasksService } from "~/database/entities/user-tasks/user-tasks.service";
 
 @Controller("user-tasks")
 export class UserTasksController {
