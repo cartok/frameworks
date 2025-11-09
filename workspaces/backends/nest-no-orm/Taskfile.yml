@@ -4,52 +4,45 @@ set: [ pipefail ]
 vars:
   REGISTRY_USER: cartok1337
   SERVICE_NAME: nest-no-orm
-
-  # The context is the monorepo root
   CONTEXT_PATH: ../../../
-
   DOCKER_BUILD_FLAGS: '{{.DOCKER_BUILD_FLAGS | default ""}}'
-
-  # Image tags - Renamed for clarity
   BASE_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}-base:latest'
   CODE_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}-code:latest'
   PROD_IMAGE: '{{.REGISTRY_USER}}/{{.SERVICE_NAME}}:latest'
 
 tasks:
   # --- Build Tasks ---
-
-  docker-build:base:
+  build:docker:base:
     cmds:
       - docker build -t {{.BASE_IMAGE}} -f docker/Dockerfile.base {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
 
-  docker-build:base:no-cache:
+  build:docker:base:no-cache:
     cmds:
-      - task: docker-build:base
+      - task: build:docker:base
         vars: { DOCKER_BUILD_FLAGS: --no-cache }
 
-  docker-build:code:
-    deps: [docker-build:base]
+  build:docker:code:
+    deps: [build:docker:base]
     cmds:
       - docker build -t {{.CODE_IMAGE}} -f docker/Dockerfile.code {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
 
-  docker-build:code:no-cache:
+  build:docker:code:no-cache:
     cmds:
-      - task: docker-build:code
+      - task: build:docker:code
         vars: { DOCKER_BUILD_FLAGS: --no-cache }
 
-  docker-build:prod:
-    deps: [docker-build:code]
+  build:docker:prod:
+    deps: [build:docker:code]
     cmds:
       - docker build -t {{.PROD_IMAGE}} -f docker/Dockerfile.prod {{.CONTEXT_PATH}} {{.DOCKER_BUILD_FLAGS}}
 
-  docker-build:
+  build:docker:
     cmds:
-      - task: docker-build:prod
+      - task: build:docker:prod
 
   # --- Publish Tasks ---
-
-  docker-publish:
-    deps: [docker-build]
+  publish:docker:
+    deps: [build:docker]
     cmds:
       - docker push {{.BASE_IMAGE}}
       - docker push {{.CODE_IMAGE}}
@@ -62,7 +55,7 @@ tasks:
       - docker compose up -d
       - pnpm run start:dev
 
-  dev-full:
+  dev:docker:
     # TODO: Permission management is complicated when trying to get API running in docker.
     # Needs further work.
     desc: Starts the full stack, including the API, inside Docker containers.
