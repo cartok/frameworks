@@ -1,0 +1,37 @@
+name: Backend | Nest REST API without ORM
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'workspaces/backends/nest-no-orm/**'
+      - 'workspaces/types/**'
+      - '.github/workflows/backend-nest-no-orm.yml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install --filter @cartok/frameworks-backend-nest-no-orm...
+
+      - name: Run linter
+        run: pnpm --filter @cartok/frameworks-backend-nest-no-orm lint
