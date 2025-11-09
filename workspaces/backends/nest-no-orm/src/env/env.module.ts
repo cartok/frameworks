@@ -45,7 +45,6 @@ export const INJECTION_KEY_ENV = Symbol("ENV");
       }),
       validationOptions: {
         allowUnknown: true,
-        abortEarly: true,
       },
     }),
   ],
