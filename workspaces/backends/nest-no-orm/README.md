@@ -43,7 +43,7 @@ Build scripts are in the [Taskfile.yml](./Taskfile.yml)
 To run commands from root of monorepo use `--filter` option of `pnpm`, for example:
 
 ```
-pnpm --filter framework-tests-backend-nest-no-orm lint
+pnpm --filter @cartok/frameworks-backend-nest-no-orm lint
 ```
 
 ## Rough TODOs
@@ -51,8 +51,8 @@ pnpm --filter framework-tests-backend-nest-no-orm lint
 ### Stage 1
 
 - Finish database service
-   - Create database tables
-   - Add routes
+  - Create database tables
+  - Add routes
 
 ### Stage 2
 

@@ -7,4 +7,4 @@ setopt pipefail
 pnpm install --force
 
 # The `start:dev` script will use Nest's own watch mode for source code changes.
-pnpm run --filter framework-tests-backend-nest-no-orm start:dev
+pnpm run --filter @cartok/frameworks-backend-nest-no-orm start:dev

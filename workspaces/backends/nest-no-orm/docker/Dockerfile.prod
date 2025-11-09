@@ -2,7 +2,7 @@ FROM cartok1337/nest-no-orm-code:latest
 
 EXPOSE ${API_PORT}
 
-RUN pnpm run build
+RUN pnpm run --filter @cartok/frameworks-backend-nest-no-orm build
 
 USER node
-CMD ["node", "./dist/main"]
+CMD ["node", "./workspaces/backends/nest-no-orm/dist/main"]
