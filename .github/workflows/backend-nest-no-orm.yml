@@ -23,12 +23,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
-          # cache: 'pnpm'
+          cache: 'pnpm'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 10.19.0
 
       - name: Install dependencies
         run: pnpm install --filter @cartok/frameworks-backend-nest-no-orm...
