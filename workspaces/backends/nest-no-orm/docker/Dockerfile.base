@@ -1,4 +1,4 @@
-FROM node:24.10.0-alpine3.22
+FROM node:24-alpine
 
 RUN apk add --no-cache zsh
 RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
