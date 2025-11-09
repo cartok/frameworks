@@ -30,4 +30,4 @@ COPY workspaces/**/package.json ./workspaces/
 # Install dependencies only for the target app and its workspace dependencies.
 # The `...` suffix in the filter ensures that all dependencies of `nest-no-orm` are included.
 # The `--prod` flag skips devDependencies, which is a best practice for base/production images.
-RUN pnpm install --prod --filter "nest-no-orm..."
+RUN pnpm install --prod --filter @cartok/frameworks-backend-nest-no-orm...
