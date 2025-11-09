@@ -1,5 +1,5 @@
 {
-  "name": "framework-tests-frontend-vite-svelte",
+  "name": "@cartok/frameworks-frontend-vite-svelte",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
   },
   "dependencies": {
-    "@cartok/todo-list-styles": "workspace:*",
-    "@cartok/todo-list-types": "workspace:*"
+    "@cartok/frameworks-todo-list-styles": "workspace:*",
+    "@cartok/frameworks-todo-list-types": "workspace:*"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^4.0.0",

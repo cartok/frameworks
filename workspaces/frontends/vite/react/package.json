@@ -1,5 +1,5 @@
 {
-  "name": "framework-tests-frontend-vite-react",
+  "name": "@cartok/frameworks-frontend-vite-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,8 +15,8 @@
     "ssr:serve": "NODE_ENV=production bun server.js"
   },
   "dependencies": {
-    "@cartok/todo-list-styles": "workspace:*",
-    "@cartok/todo-list-types": "workspace:*",
+    "@cartok/frameworks-todo-list-styles": "workspace:*",
+    "@cartok/frameworks-todo-list-types": "workspace:*",
     "@elysiajs/html": "^1.1.1",
     "@elysiajs/static": "^1.1.1",
     "@reduxjs/toolkit": "^2.4.0",

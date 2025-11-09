@@ -1,5 +1,5 @@
 {
-  "name": "framework-tests-frontend-vite-solidjs",
+  "name": "@cartok/frameworks-frontend-vite-solidjs",
   "type": "module",
   "private": true,
   "version": "0.0.0",
@@ -12,8 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cartok/todo-list-styles": "workspace:*",
-    "@cartok/todo-list-types": "workspace:*",
+    "@cartok/frameworks-todo-list-styles": "workspace:*",
+    "@cartok/frameworks-todo-list-types": "workspace:*",
     "solid-js": "^1.9.3"
   },
   "devDependencies": {

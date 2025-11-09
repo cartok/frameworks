@@ -53,7 +53,7 @@ importers:
 
   workspaces/backends/nest-no-orm:
     dependencies:
-      '@cartok/todo-list-types':
+      '@cartok/frameworks-todo-list-types':
         specifier: workspace:*
         version: link:../../types
       '@nestjs/common':
@@ -160,10 +160,10 @@ importers:
 
   workspaces/frontends/vite/react:
     dependencies:
-      '@cartok/todo-list-styles':
+      '@cartok/frameworks-todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
-      '@cartok/todo-list-types':
+      '@cartok/frameworks-todo-list-types':
         specifier: workspace:*
         version: link:../../../types
       '@elysiajs/html':
@@ -221,10 +221,10 @@ importers:
 
   workspaces/frontends/vite/solidjs:
     dependencies:
-      '@cartok/todo-list-styles':
+      '@cartok/frameworks-todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
-      '@cartok/todo-list-types':
+      '@cartok/frameworks-todo-list-types':
         specifier: workspace:*
         version: link:../../../types
       solid-js:
@@ -240,10 +240,10 @@ importers:
 
   workspaces/frontends/vite/svelte:
     dependencies:
-      '@cartok/todo-list-styles':
+      '@cartok/frameworks-todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
-      '@cartok/todo-list-types':
+      '@cartok/frameworks-todo-list-types':
         specifier: workspace:*
         version: link:../../../types
     devDependencies:
@@ -268,10 +268,10 @@ importers:
 
   workspaces/frontends/vite/vue:
     dependencies:
-      '@cartok/todo-list-styles':
+      '@cartok/frameworks-todo-list-styles':
         specifier: workspace:*
         version: link:../../../packages/todo-list-styles
-      '@cartok/todo-list-types':
+      '@cartok/frameworks-todo-list-types':
         specifier: workspace:*
         version: link:../../../types
       vue:

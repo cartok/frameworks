@@ -1,5 +1,5 @@
 {
-  "name": "framework-tests-frontend-vite-lit",
+  "name": "@cartok/frameworks-frontend-vite-lit",
   "private": true,
   "version": "0.0.0",
   "type": "module",

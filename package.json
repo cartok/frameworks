@@ -1,5 +1,5 @@
 {
-  "name": "framework-tests",
+  "name": "@cartok/frameworks",
   "private": true,
   "packageManager": "pnpm@10.19.0",
   "engines": {
