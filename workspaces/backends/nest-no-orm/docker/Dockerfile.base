@@ -1,8 +1,10 @@
 FROM node:24-alpine
 
+# --- System Dependencies ---
 RUN apk add --no-cache zsh
 RUN corepack enable && corepack prepare pnpm@10.19.0 --activate
 
+# --- Workspace ---
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -13,9 +15,19 @@ WORKDIR /usr/src/app
 # # Switch to node user.
 # USER node
 
+# --- NPM Dependencies ---
+# Copy all package manifests and the lockfile.
+# This allows pnpm to build the workspace dependency graph.
 COPY pnpm-lock.yaml ./
 COPY pnpm-workspace.yaml ./
 COPY package.json ./
-COPY ./workspaces/backends/nest-no-orm/package.json ./workspaces/backends/nest-no-orm/
 
-RUN pnpm install
+# Copy all package.json files from the workspace to allow pnpm to resolve dependencies.
+# The destination path `./workspaces/` preserves the directory structure,
+# which is crucial for pnpm to find the packages.
+COPY workspaces/**/package.json ./workspaces/
+
+# Install dependencies only for the target app and its workspace dependencies.
+# The `...` suffix in the filter ensures that all dependencies of `nest-no-orm` are included.
+# The `--prod` flag skips devDependencies, which is a best practice for base/production images.
+RUN pnpm install --prod --filter "nest-no-orm..."
