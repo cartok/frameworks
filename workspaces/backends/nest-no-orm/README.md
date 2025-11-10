@@ -48,28 +48,16 @@ pnpm --filter @cartok/frameworks-backend-nest-no-orm lint
 
 ## Rough TODOs
 
-### Stage 1
-
-- Finish database service
-  - Create database tables
-  - Add routes
-
-### Stage 2
-
-- Add CI/CD via Github Actions ...
-- Add Git hooks via python pre-commit
-
-### Stage 3
-
-- Integrate the backend into one of the frontends
-
-### Stage 4
-
-- Implement the rest of the backends
-
-### Stage 5
-
-- Features
+1. Now
+  - Deploy to free Oracle VM + Github Action
+  - Traefik
+  - Local K8s
+1. Eventually afterwards
+  - Integrate the backend in one of the frontends + also host it
+1. Unlikely to happen soon
+  - Implement other backends
+  - Deployment switch via some config file (choose one BE & FE) -> Alwas free deployment for testing purposes.
+  - Add only a few features and improve frontend quality
 
 ---
 
