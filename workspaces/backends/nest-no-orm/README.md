@@ -52,9 +52,9 @@ pnpm --filter @cartok/frameworks-backend-nest-no-orm lint
   - Deploy to free Oracle VM + Github Action
   - Traefik
   - Local K8s
-1. Eventually afterwards
+2. Eventually afterwards
   - Integrate the backend in one of the frontends + also host it
-1. Unlikely to happen soon
+3. Unlikely to happen soon
   - Implement other backends
   - Deployment switch via some config file (choose one BE & FE) -> Alwas free deployment for testing purposes.
   - Add only a few features and improve frontend quality
