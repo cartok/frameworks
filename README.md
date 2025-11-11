@@ -36,14 +36,14 @@ npm run eslint-rules --file=./workspaces/frontends/vite/react/src/components/Tod
 Only those which are commonly used and match my main languages. I would be interested in Vertex (Kotlin), Actix (Rust) and other modern technologies aswell.
 
 - [ ] TS, NestJS
-  1. [x] REST + SQL (wip)
-  1. [ ] REST + ORM
-  1. [ ] JSON:API + ORM
-  1. [ ] GraphQL + ORM
+  1. [x] REST + SQL
+  1. [ ] + JSON:API
+  1. [ ] + GraphQL
   1. [ ] BFF (Backend for Frontend)
 - [ ] Java/Kotlin Spring Boot with WebFlux
-  1. [ ] REST + ORM
-  1. [ ] GraphQL + ORM
+  1. [ ] REST + ORM + GraphQL
+- [ ] Python, Django or so
+  1. [ ] REST + ORM 
 
 ### Benchmarks
 
