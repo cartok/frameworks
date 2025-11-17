@@ -82,14 +82,4 @@ Checkmarks here only reference if "Stage 1" is done for those atm. Can't find ti
 - react + stream ssr (`renderToPipeableStream`) requires nodejs streams, so elysia & bun does not work
 - react + vike does not yet fully support server components
 
-## Stages
-
-### Stage 1: Frontend Entry
-
-- [x] Create a basic TODO List example for at least one framework
-  - [x] Start with **local state** to learn the basics
-  - [x] Create a **global state / store** solution as a better replacement
-- [x] Create a reusable CSS reset that I can use everwhere
-- [x] Create a package for all the CSS using latest CSS features
-- [x] Create a package to share the types of the datastructures the apps will use
 
