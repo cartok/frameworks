@@ -1,12 +1,12 @@
-# Framework tests
+# Frameworks
 
-Just started this to try out some web frameworks.
+A project I use to try out some web frameworks.
 
 ## Installation
 
 ```shell
 corepack enable
-corepack prepare pnpm@latest --activate
+corepack prepare pnpm@10.19.0 --activate
 ```
 
 ## Tipps
@@ -93,30 +93,3 @@ Checkmarks here only reference if "Stage 1" is done for those atm. Can't find ti
 - [x] Create a package for all the CSS using latest CSS features
 - [x] Create a package to share the types of the datastructures the apps will use
 
-_No need to implement every framework from in order to work on Stage 2 and 3._
-
-### Stage 2: Backend
-
-- [ ] Create backend incl. CI/CD (github), containerization (Docker Compose), deployment (Heroku, later AWS/GPC), Database (Postgres without ORM)
-  - [ ] NestJS
-  - [ ] Spring Boot (Kotlin)
-
-### Stage 3: Frontend Performance
-
-- [ ] Performance
-  - [ ] Add SSR
-    - [ ] if possible with HTML streaming
-    - [ ] with lazy / partial hydration
-  - [ ] Image loading
-    - [ ] Add an image to the start page which will function as LCP and ensure it is prefetched
-    - [ ] Add an image outside of the initial viewport and ensure it is lazy loaded.
-
-### Stage 4: Frontend Core Features
-
-- [ ] TODO List UI features
-  - [ ] Add a text filter for todo items including label, input, button.
-  - [ ] Add a checkbox (incl. rendering of checked items)
-  - [ ] Performance: Try out lazy loading of components by adding a component which can display the full todo item text when clicking on an entry (enlarge the area, exchange, no modal).
-- [ ] Routing & Syncing
-  - [ ] create start page with search input and search button, which redirects to todo page with search param set. make sure that the param is updated via the filter input on the todo page (there are 2 inputs)
-  - [ ] create a page which does some simulated computation (setTimeout) and ensure that navigation change will not be blocked by rendering
