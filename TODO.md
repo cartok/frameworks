@@ -1,13 +1,13 @@
 # TODOs
 
-## Backend
-
-- [ ] Create backend incl. CI/CD (github), containerization (Docker Compose), deployment (Oracle VM & local Kubernetes), Database (Postgres without ORM)
-  - [ ] NestJS
-  - [ ] Spring Boot (Kotlin)
-
 ## Frontend
 
+- [x] Create a basic TODO List example for at least one framework
+  - [x] Start with **local state** to learn the basics
+  - [x] Create a **global state / store** solution as a better replacement
+- [x] Create a reusable CSS reset that I can use everwhere
+- [x] Create a package for all the CSS using latest CSS features
+- [x] Create a package to share the types of the datastructures the apps will use
 - [ ] Add SSR
   - [ ] if possible with HTML streaming
   - [ ] with lazy / partial hydration
@@ -21,3 +21,10 @@
 - [ ] Routing & Syncing
   - [ ] create start page with search input and search button, which redirects to todo page with search param set. make sure that the param is updated via the filter input on the todo page (there are 2 inputs)
   - [ ] create a page which does some simulated computation (setTimeout) and ensure that navigation change will not be blocked by rendering
+
+
+## Backend
+
+- [ ] Create backend incl. CI/CD (github), containerization (Docker Compose), deployment (Oracle VM & local Kubernetes), Database (Postgres without ORM)
+  - [ ] NestJS
+  - [ ] Spring Boot (Kotlin)
