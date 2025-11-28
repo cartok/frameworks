@@ -37,9 +37,10 @@ Only those which are commonly used and match my main languages. I would be inter
 
 - [ ] TS, NestJS
   1. [x] REST + SQL
-  1. [ ] + JSON:API
-  1. [ ] + GraphQL
-  1. [ ] BFF (Backend for Frontend)
+  2. [x] Add OpenAPI / Swagger
+  3. [ ] Dupliacte & use ORM instead of SQL
+    1. [ ] Add GraphQL
+  5. 1. [ ] JSON:API (only eventually and separated)
 - [ ] Java/Kotlin Spring Boot with WebFlux
   1. [ ] REST + ORM + GraphQL
 - [ ] Python, Django or so
