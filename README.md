@@ -40,7 +40,7 @@ Only those which are commonly used and match my main languages. I would be inter
   2. [x] Add OpenAPI / Swagger
   3. [ ] Eventually duplicate for JSON:API but rather try out ORM + GraphQL (after enhancing Frontend & Data)
   4. [ ] Dupliacte & use ORM instead of SQL
-    1. [ ] Add GraphQL
+      1. [ ] Add GraphQL
 - [ ] Java/Kotlin Spring Boot with WebFlux
   1. [ ] REST + ORM + GraphQL
 - [ ] Python, Django or so
