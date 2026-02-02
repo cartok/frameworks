@@ -33,18 +33,17 @@ npm run eslint-rules --file=./workspaces/frontends/vite/react/src/components/Tod
 
 ## Backends
 
-Only those which are commonly used and match my main languages. I would be interested in Vertex (Kotlin), Actix (Rust) and other modern technologies aswell.
+This was a gross technologies plan, nothing set in stone. 
+I'm now learning some things via Udemy instead.
 
 - [ ] TS, NestJS
-  1. [x] REST + SQL
-  2. [x] Add OpenAPI / Swagger
-  3. [ ] Eventually duplicate for JSON:API but rather try out ORM + GraphQL (after enhancing Frontend & Data)
-  4. [ ] Dupliacte & use ORM instead of SQL
-      1. [ ] Add GraphQL
-- [ ] Java/Kotlin Spring Boot with WebFlux
-  1. [ ] REST + ORM + GraphQL
-- [ ] Python, Django or so
-  1. [ ] REST + ORM 
+  - [x] REST + SQL
+    - [x] Add OpenAPI / Swagger
+    - [ ] Eventually duplicate for JSON:API but rather try out ORM + GraphQL (after enhancing Frontend & Data)
+    - [ ] Dupliacte & use ORM instead of SQL
+      - [ ] Add GraphQL
+- [ ] Spring Boot (Java)
+- [ ] Quarkus (Kotlin)
 
 ### Benchmarks
 
